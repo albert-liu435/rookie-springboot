@@ -11,8 +11,21 @@
     <packaging>pom</packaging>
     <modules>
         <module>rookie-springboot-fileupload</module>
+        <module>rookie-springboot-aop</module>
     </modules>
     <artifactId>rookie-springbootweb</artifactId>
 
+<dependencies>
+    <dependency>
+        <groupId>cn.hutool</groupId>
+        <artifactId>hutool-all</artifactId>
+        <version>${hutool.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <optional>true</optional>
+    </dependency>
 
+</dependencies>
 </project>
