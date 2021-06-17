@@ -12,7 +12,7 @@ import java.util.Date;
 /**
  * @ClassName Long2DateSerialize
  * @Description Long2DateSerialize
- * @Author liuxili
+ * @Author rookie
  * @Date 2021/6/17 11:16
  * @Version 1.0
  */

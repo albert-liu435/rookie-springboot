@@ -2,6 +2,8 @@ package com.rookie.bigdata.domain;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @ClassName User
  * @Description User
@@ -10,7 +12,7 @@ import lombok.Data;
  * @Version 1.0
  */
 @Data
-public class User {
+public class User implements Serializable {
 
     private long id;
 
