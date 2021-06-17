@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
 /**
  * @ClassName StudentControllerTest
  * @Description StudentControllerTest
- * @Author liuxili
+ * @Author rookie
  * @Date 2021/6/17 11:43
  * @Version 1.0
  */
