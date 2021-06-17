@@ -29,6 +29,7 @@ public class StudentController {
     public Student serialization() throws JsonProcessingException {
 
         Student student = new Student();
+        student.setId(100L);
         student.setName("zhagnsan");
         student.setAge(23);
         student.setStudentNo(10);

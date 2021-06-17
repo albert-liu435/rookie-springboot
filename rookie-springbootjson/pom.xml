@@ -15,5 +15,13 @@
         <module>rookie-springboot-jackson</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+    </dependencies>
+
 
 </project>

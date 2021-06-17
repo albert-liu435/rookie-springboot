@@ -82,12 +82,7 @@ public class StudentControllerTest {
     public void deserialization() throws Exception{
 
         MvcResult result=mockMvc.perform(MockMvcRequestBuilders.put("/deserialization")
-                .contentType(MediaType.APPLICATION_JSON).content("{\n" +
-                        "  \"studentNo\" : 10,\n" +
-                        "  \"name\" : \"zhagnsan\",\n" +
-                        "  \"age\" : 23,\n" +
-                        "  \"birthDate\" : \"2021-06-17 03:49:26\"\n" +
-                        "}"))
+                .contentType(MediaType.APPLICATION_JSON).content("{\"id\":\"100\",\"studentNo\":10,\"name\":\"zhagnsan\",\"age\":23,\"birthDate\":\"2021-06-17 13:58:44\"}"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print())
                 .andReturn();
