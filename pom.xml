@@ -39,11 +39,11 @@
                 <version>${mysql.version}</version>
             </dependency>-->
             <!-- hutool工具类 -->
-            <dependency>
+<!--            <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
-            </dependency>
+            </dependency>-->
 
 
         </dependencies>
