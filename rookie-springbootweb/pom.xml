@@ -13,6 +13,7 @@
         <module>rookie-springboot-fileupload</module>
         <module>rookie-springboot-aop</module>
         <module>rookie-springboot-cors</module>
+        <module>rookie-springboot-junit4</module>
     </modules>
     <artifactId>rookie-springbootweb</artifactId>
 
