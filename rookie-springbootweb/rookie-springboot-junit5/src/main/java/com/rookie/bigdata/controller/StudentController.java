@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.rookie.bigdata.domain.Student;
 import com.rookie.bigdata.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,7 +35,13 @@ public class StudentController {
         student.setBirthDate(new Date());
 
 
-
         return student;
     }
+
+
+    @RequestMapping(value = "/{name}", method = RequestMethod.GET)
+    public String getHello(@PathVariable String name) {
+        return "Hello " + name;
+    }
+
 }
