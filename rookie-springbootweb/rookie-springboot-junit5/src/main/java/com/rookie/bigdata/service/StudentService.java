@@ -5,7 +5,7 @@ import com.rookie.bigdata.domain.Student;
 /**
  * @ClassName StudentService
  * @Description StudentService
- * @Author liuxili
+ * @Author rookie
  * @Date 2021/6/21 9:51
  * @Version 1.0
  */
