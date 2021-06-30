@@ -12,6 +12,7 @@
         <module>rookie-springbootweb</module>
         <module>rookie-springbootjson</module>
         <module>rookie-springbootredis</module>
+        <module>rookie-springbootdatabase</module>
     </modules>
 
     <properties>

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
+import java.util.UUID;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -32,5 +34,11 @@ class RedissonServiceImplTest {
 
         Long key = redissonService.AtomicLong(/*(long) 1,*/ "key");
         System.out.println(key);
+    }
+
+
+    @Test
+    public void test1(){
+        System.out.println(UUID.randomUUID().toString());
     }
 }
