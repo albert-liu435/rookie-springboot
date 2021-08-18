@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @ClassName CorsConfig
- * @Description CorsConfig
+ * @Description https://www.cnblogs.com/antLaddie/p/14751540.html
  * @Author rookie
  * @Date 2021/6/18 10:21
  * @Version 1.0

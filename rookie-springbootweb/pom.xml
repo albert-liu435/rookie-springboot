@@ -17,6 +17,7 @@
         <module>rookie-springboot-junit5</module>
         <module>rookie-springboot-Swagger</module>
         <module>rookie-springboot-mybatisplus</module>
+        <module>rookie-springboot-parameter</module>
     </modules>
     <artifactId>rookie-springbootweb</artifactId>
 
