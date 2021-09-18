@@ -38,6 +38,10 @@ public class StudentController {
 
     @RequestMapping(value = "/deserialization", method = RequestMethod.PUT)
     public String deserialization(@RequestBody Student student) {
+
+        //此时如果采用RequestUtils.getJsonBody()方法是获取不到流中的数据的，需要自定义一个包装类，并添加到过滤器中，参考该工程
+
+
         return student.toString();
     }
 
