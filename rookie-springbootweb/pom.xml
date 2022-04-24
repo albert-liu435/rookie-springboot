@@ -18,6 +18,7 @@
         <module>rookie-springboot-Swagger</module>
         <module>rookie-springboot-mybatisplus</module>
         <module>rookie-springboot-parameter</module>
+        <module>rookie-springboot-kaptcha</module>
     </modules>
     <artifactId>rookie-springbootweb</artifactId>
 

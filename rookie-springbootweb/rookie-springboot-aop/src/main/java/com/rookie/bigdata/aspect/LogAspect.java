@@ -15,7 +15,7 @@ import java.util.Map;
 
 /**
  * @ClassName LogAspect
- * @Description LogAspect
+ * @Description http://www.macrozheng.com/#/technology/aop_log
  * @Author rookie
  * @Date 2021/6/17 16:20
  * @Version 1.0
