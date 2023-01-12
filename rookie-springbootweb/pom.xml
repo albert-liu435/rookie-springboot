@@ -19,6 +19,7 @@
         <module>rookie-springboot-mybatisplus</module>
         <module>rookie-springboot-parameter</module>
         <module>rookie-springboot-kaptcha</module>
+        <module>rookie-springboot-filter</module>
     </modules>
     <artifactId>rookie-springbootweb</artifactId>
 
