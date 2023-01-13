@@ -6,7 +6,7 @@ import java.lang.annotation.*;
 
 /**
  * @Classname SensitiveField
- * @Description 对需要脱敏的字段加上该注解
+ * @Description 对需要脱敏的字段加上该注解 参考 https://www.cnblogs.com/qdhxhz/p/16352087.html
  * @Author rookie
  * @Date 2023/1/13 10:37
  * @Version 1.0
