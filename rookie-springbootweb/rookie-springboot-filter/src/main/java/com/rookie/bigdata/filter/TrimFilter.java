@@ -8,7 +8,7 @@ import java.io.IOException;
 
 /**
  * @Classname TrimFilter
- * @Description 过滤器 用于去掉参数中的空格
+ * @Description 过滤器 用于去掉参数中的空格 参考https://www.cnblogs.com/qdhxhz/p/16826233.html
  * @Author rookie
  * @Date 2023/1/12 17:11
  * @Version 1.0
