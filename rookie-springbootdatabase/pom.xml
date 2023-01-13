@@ -12,6 +12,7 @@
     <modules>
         <module>rookie-springboot-es</module>
         <module>rookie-springboot-mybatis</module>
+        <module>rookie-springboot-mybatis-interceptor</module>
     </modules>
 
     <artifactId>rookie-springbootdatabase</artifactId>
