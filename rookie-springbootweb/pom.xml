@@ -20,6 +20,7 @@
         <module>rookie-springboot-parameter</module>
         <module>rookie-springboot-kaptcha</module>
         <module>rookie-springboot-filter</module>
+        <module>rookie-springboot-schedule</module>
     </modules>
     <artifactId>rookie-springbootweb</artifactId>
 
