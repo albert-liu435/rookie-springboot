@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @ClassName RedissonApplication
- * @Description RedissonApplication
+ * @Description RedissonApplication  https://www.cnblogs.com/qdhxhz/p/11059200.html
  * @Author rookie
  * @Date 2021/6/22 10:01
  * @Version 1.0
