@@ -1,8 +1,6 @@
 package com.rookie.bigdata.mapper;
 
 import com.rookie.bigdata.domain.TabUser;
-import com.rookie.bigdata.domain.User;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 

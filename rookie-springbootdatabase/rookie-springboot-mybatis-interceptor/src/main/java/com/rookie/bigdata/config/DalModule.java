@@ -1,7 +1,6 @@
 package com.rookie.bigdata.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.rookie.bigdata.desensitization.plugin.DesensitizationInterceptor;
 import com.rookie.bigdata.plugin.AutoIdInterceptor;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -35,7 +34,7 @@ public class DalModule {
     @Bean
     public DataSource dataSource() {
         DruidDataSource druidDataSource = new DruidDataSource();
-        druidDataSource.setUrl("jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8");
+        druidDataSource.setUrl("jdbc:mysql://127.0.0.1:3306/db1?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Hongkong");
         druidDataSource.setDriverClassName("com.mysql.jdbc.Driver");
         druidDataSource.setUsername("root");
         druidDataSource.setPassword("root");

@@ -25,7 +25,7 @@ import java.util.Collections;
  */
 @Configuration
 @ComponentScan(basePackageClasses = DalModule.class)
-@MapperScan(basePackages = "desensitization.mapper")
+@MapperScan(basePackages = "com.rookie.bigdata.mapper")
 public class DalModule {
 
     /**
@@ -34,7 +34,7 @@ public class DalModule {
     @Bean
     public DataSource dataSource() {
         DruidDataSource druidDataSource = new DruidDataSource();
-        druidDataSource.setUrl("jdbc:mysql://118.11.124.65:3306/mall_goods?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Hongkong");
+        druidDataSource.setUrl("jdbc:mysql://127.0.0.1:3306/db1?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Hongkong");
         druidDataSource.setDriverClassName("com.mysql.jdbc.Driver");
         druidDataSource.setUsername("root");
         druidDataSource.setPassword("root");
