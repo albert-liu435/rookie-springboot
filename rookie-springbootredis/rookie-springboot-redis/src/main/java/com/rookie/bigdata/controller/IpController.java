@@ -25,7 +25,7 @@ public class IpController {
     //这里就不获取请求的ip,而是写死一个IP
     @ResponseBody
     @RequestMapping("iplimiter")
-    @IpLimiter(ipAdress = "127.198.66.01", limit = 5, time = 10, message = MESSAGE)
+    @IpLimiter(ipAdress = "127.0.0.1", limit = 5, time = 10, message = MESSAGE)
     public String sendPayment(HttpServletRequest request) throws Exception {
         return "请求成功";
     }
