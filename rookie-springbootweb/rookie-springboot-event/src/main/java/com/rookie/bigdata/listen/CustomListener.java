@@ -9,7 +9,7 @@ import java.util.UUID;
 
 /**
  * @Class CustomListener
- * @Description TODO
+ * @Description 同步事件监听
  * @Author rookie
  * @Date 2023/3/16 18:33
  * @Version 1.0
