@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
-    <bean id="animal" class="com.rookie.bigdata.factory.domain.Animal" destroy-method="myDestory" init-method="myInit">
+    <bean id="animal" class="com.rookie.bigdata.beans.factory.support.defaultlistablebeanfactory.Animal" destroy-method="myDestory" init-method="myInit">
         <property name="name" value="哈士奇"></property>
         <property name="age" value="3"></property>
     </bean>

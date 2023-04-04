@@ -13,6 +13,7 @@
         <module>rookie-mvc-helloworld</module>
         <module>rookie-spring-io</module>
         <module>rookie-jetty-helloworld</module>
+        <module>rookie-spring-context</module>
     </modules>
     <packaging>pom</packaging>
 

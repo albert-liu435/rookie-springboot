@@ -9,6 +9,6 @@
         <property name="age" value="3"></property>
     </bean>
 
-<!--    <bean id="myBeanPostProcessor" class="com.rookie.bigdata.context.MyBeanPostProcessor"/>-->
-<!--    <bean id="myBeanFactoryPostProcessor" class="com.rookie.bigdata.context.MyBeanFactoryPostProcessor"/>-->
+    <bean id="myBeanPostProcessor" class="com.rookie.bigdata.context.MyBeanPostProcessor"/>
+    <bean id="myBeanFactoryPostProcessor" class="com.rookie.bigdata.context.MyBeanFactoryPostProcessor"/>
 </beans>
