@@ -1,8 +1,8 @@
 package com.rookie.bigdata.annotation;
 
 import com.rookie.bigdata.domain.User;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.*;
 
 /**
  * 基于注释实例化Bean

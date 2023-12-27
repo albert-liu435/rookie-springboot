@@ -29,6 +29,8 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+
+
     <!-- 让Spring MVC的前端控制器拦截所有请求 -->
     <servlet-mapping>
         <servlet-name>HelloWord</servlet-name>

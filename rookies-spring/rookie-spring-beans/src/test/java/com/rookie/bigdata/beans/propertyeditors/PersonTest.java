@@ -17,6 +17,8 @@ public class PersonTest {
 
     @Test
     public void test(){
+
+
         ApplicationContext application = new ClassPathXmlApplicationContext("beans/propertyeditors/applicationContext.xml");
         Person person =  application.getBean(Person.class);
         System.out.println(person);

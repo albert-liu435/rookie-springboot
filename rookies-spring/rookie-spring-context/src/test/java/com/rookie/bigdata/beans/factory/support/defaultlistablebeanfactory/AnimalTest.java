@@ -20,6 +20,9 @@ public class AnimalTest {
     public void test01(){
 
 
+//        XmlBeanFacotry bf = new XmlBeanFacotry(new ClassPathResource("spring-context.xm1")):
+
+
         Resource resource = new ClassPathResource("beans/factory/support/defaultlistablebeanfactory/bean.xml");
 
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();

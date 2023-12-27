@@ -1,5 +1,6 @@
 package com.rookie.bigdata.beans.factory.factorybean;
 
+
 import org.springframework.beans.factory.FactoryBean;
 
 /**
