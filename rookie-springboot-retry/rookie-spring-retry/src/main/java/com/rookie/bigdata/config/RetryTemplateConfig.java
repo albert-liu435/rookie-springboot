@@ -20,6 +20,9 @@ public class RetryTemplateConfig {
 
     @Bean
     public RetryTemplate retryTemplate() {
+
+
+
         RetryTemplate retryTemplate = new RetryTemplate();
 
         SimpleRetryPolicy retryPolicy = new SimpleRetryPolicy(); //设置重试策略

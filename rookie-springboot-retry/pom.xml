@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
+        <module>rookie-customer-retry</module>
         <module>rookie-spring-retry</module>
     </modules>
     <artifactId>rookie-springboot-retry</artifactId>

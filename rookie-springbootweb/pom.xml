@@ -12,6 +12,7 @@
     <modules>
         <module>rookie-springboot-fileupload</module>
         <module>rookie-springboot-aop</module>
+        <module>rookie-springboot-aopproxy</module>
         <module>rookie-springboot-cors</module>
         <module>rookie-springboot-junit4</module>
         <module>rookie-springboot-junit5</module>

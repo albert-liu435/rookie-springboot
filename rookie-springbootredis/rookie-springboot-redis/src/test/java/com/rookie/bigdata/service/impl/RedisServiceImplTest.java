@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.util.StringUtils;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @ClassName RedisServiceImplTest
@@ -34,6 +34,18 @@ class RedisServiceImplTest {
 
     @Test
     void get() {
+
+        String token=String.valueOf(redisService.get( "douyintong_token"));
+
+        if(StringUtils.isEmpty(token) || "null".equals(token)){
+            System.out.println("token为空");
+        }
+
+        System.out.println(token);
+
+
+
+
     }
 
     @Test

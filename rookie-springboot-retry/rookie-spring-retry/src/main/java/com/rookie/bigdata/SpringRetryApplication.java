@@ -12,6 +12,8 @@ import org.springframework.retry.annotation.EnableRetry;
  * @Version 1.0
  */
 @SpringBootApplication
+//设置了proxyTargetClass=true这使用CGLIB动态代理
+//@EnableRetry(proxyTargetClass = true)
 //开始Retry功能
 @EnableRetry
 public class SpringRetryApplication {
