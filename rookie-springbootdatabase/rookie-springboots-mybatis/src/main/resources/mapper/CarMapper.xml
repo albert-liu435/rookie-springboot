@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rookie.bigdata.mapper.CarMapper">
+
+
+    <!--
+    #{}对应的是pojo层实体类的属性名"abcDe"对应的"getAbcDe"的"abcDe"(驼峰命名规范)
+    想简单点，对应属性名就行，复杂可能会乱ovo
+-->
+    <insert id="insert">
+        insert into t_car(id, car_num, brand, guide_price, produce_time, car_type)
+        values (null, #{carNum}, #{brand}, #{guidePrice}, #{produceTime}, #{carType})
+    </insert>
+    <!--如果占位符只有一个，其实可以随便写里面的内容但不能不写，但最好见名知意，这次只是测试-->
+<!--    <delete id="delete">-->
+<!--        delete-->
+<!--        from t_car-->
+<!--        where id = #{abd}-->
+<!--    </delete>-->
+
+    <delete id="delete">
+        delete
+        from t_car
+        where id = #{id}
+    </delete>
+
+    <update id="update">
+        update t_car
+        set car_num=#{carNum},
+            brand=#{brand},
+            guide_price=#{guidePrice},
+            produce_time=#{produceTime},
+            car_type=#{carType}
+        where id = #{id}
+    </update>
+
+    <select id="getAll" resultType="Car">
+        select *
+        from t_car;
+    </select>
+
+
+    <!--
+            这里是不能使用#{} 否则会以字符串形式放在Sql语句当中 只能使用${}
+            #{}是防止Sql注入风险的 是以值的方式放到Sql语句当中
+            如果需要的Sql语句的关键字(固定值)放到Sql语句当中只能使用${}
+        -->
+    <select id="selectAllByAscOrDesc" resultType="Car">
+        select
+            id,
+            car_num carNum,
+            brand,
+            guide_price guidePrice,
+            produce_time produceTime,
+            car_type carType
+        from
+            t_car
+        order by
+            produce_time ${ascOrDesc}
+    </select>
+    <select id="selectByCarType" resultType="Car">
+        select
+            id,
+            car_num carNum,
+            brand,
+            guide_price guidePrice,
+            produce_time produceTime,
+            car_type carType
+        from
+            t_car
+        where
+            car_type=#{carType}
+    </select>
+
+    <!--delete from t_car where id in (?,?)-->
+    <delete id="deleteBatch">
+        delete from t_car
+        where id in (${ids})
+    </delete>
+
+    <select id="selectByBrandLike" resultType="Car">
+        select
+        id,
+        car_num carNum,
+        brand,
+        guide_price guidePrice,
+        produce_time produceTime,
+        car_type carType
+        from
+        t_car
+        where
+        <!--brand like '%${brand}%'-->
+        <!--brand like concat('%',#{brand},'%')-->
+        brand like "%"#{brand}"%"
+    </select>
+
+
+<!--    useGeneratedKeys="true" 使用自动生成的主键值-->
+<!--    keyProperty="id" 指定主键值赋值给对象的那个属性,这个就表示将主键值赋值给Car对象的id属性-->
+
+    <insert id="insertCarUseGeneratedKeys" useGeneratedKeys="true" keyProperty="id">
+        insert into t_car
+            values (null,#{carNum},#{brand},#{guidePrice},#{produceTime},#{carType})
+    </insert>
+
+
+
+<!--    1、#{}占位符是为了获取值，通常在where语句后。-->
+
+<!--    2、若在Sql代码中语句为select * from users where id=#{id}，执行后自动翻译为select * from users where id=?。这就相当于JDBC中的PreparedStatement预编译阶段，可以有效的防止Sql注入。-->
+
+<!--    3、#{}里如何写，看parameterType参数的类型。如果parameterType的类型是简单类型(8种基本(封装)+String)，则#{}里随便写；如果是实体类的类型，则#{}里只能是类中成员变量的名称，而且区分大小写。-->
+
+<!--    4、${}字符串用于拼接或字符串替换。一般用于模糊查询中，建议少用，因为有Sql注入的风险。同样分两种情况：如果parameterType的类型是简单类型，则${}里随便写，但是分版本，如果是3.5.1及以下的版本，只能写value；如果是实体类的类型，则${}里只能是类中成员变量的名称(现在已经少用)。-->
+<!--    ————————————————-->
+<!--    版权声明：本文为CSDN博主「字节尚未跳动」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。-->
+<!--    原文链接：https://blog.csdn.net/m0_65563175/article/details/126611990-->
+
+</mapper>

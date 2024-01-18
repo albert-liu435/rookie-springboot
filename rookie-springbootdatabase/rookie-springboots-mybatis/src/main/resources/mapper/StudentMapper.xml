@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rookie.bigdata.mapper.StudentMapper">
+
+
+    <select id="selectById" resultType="Student">
+        select id,
+               name,
+               age,
+               height,
+               birth,
+               sex,
+               createTime,
+               created_at as createdAt
+        from oasys.t_student
+        where id = #{id};
+    </select>
+
+
+    <select id="selectByName" resultType="Student">
+        select id,
+               name,
+               age,
+               height,
+               birth,
+               sex,
+               createTime,
+               created_at as createdAt
+        from oasys.t_student
+        where name = #{name,javaType=String,jdbcType=VARCHAR};
+    </select>
+
+    <select id="selectByBirth" resultType="Student">
+        select id,
+               name,
+               age,
+               height,
+               birth,
+               sex,
+               createTime,
+               created_at as createdAt
+        from oasys.t_student
+        where birth = #{birth};
+    </select>
+
+    <select id="selectBySex" resultType="Student">
+        select id,
+               name,
+               age,
+               height,
+               birth,
+               sex,
+               createTime,
+               created_at as createdAt
+        from oasys.t_student
+        where sex = #{sex};
+    </select>
+
+
+    <insert id="insertStudentByMap" parameterType="map">
+        insert into
+            t_student
+        values
+            (null,#{姓名},#{年龄},#{身高},#{生日},#{性别},now(),now())
+    </insert>
+</mapper>
