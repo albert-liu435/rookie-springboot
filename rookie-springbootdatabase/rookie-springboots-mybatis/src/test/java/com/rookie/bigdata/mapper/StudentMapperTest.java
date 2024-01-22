@@ -67,19 +67,68 @@ class StudentMapperTest {
 
 
     @Test
-    void insertStudentByMap(){
-        Map<String,Object> map=new HashMap<>();
-        map.put("姓名","王五");
-        map.put("年龄","20");
-        map.put("身高",161);
-        map.put("性别",'男');
-        map.put("生日",new Date());
-        int i=studentMapper.insertStudentByMap(map);
-        if(i>0){
+    void insertStudentByMap() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("姓名", "王五");
+        map.put("年龄", "20");
+        map.put("身高", 161);
+        map.put("性别", '男');
+        map.put("生日", new Date());
+        int i = studentMapper.insertStudentByMap(map);
+        if (i > 0) {
             System.out.println("增加成功");
         }
     }
 
+
+    @Test
+    void insertStudentByPOJO() {
+
+        //   (null,#{name},#{age},#{height},#{birth},#{sex},#{createTime},#{createdAt})
+        Student student = new Student(null, "赵六", 26, 180, new Date(), '男', new Date(), new Date(), 1, null);
+
+        int i = studentMapper.insertStudentByPOJO(student);
+        if (i > 0) {
+            System.out.println("insert 处理成功");
+        }
+
+    }
+
+
+    @Test
+    void selectByNameAndSex() {
+
+        List<Student> students = studentMapper.selectByNameAndSex("赵六", '男');
+        for (Student student : students) {
+            System.out.println(student);
+        }
+    }
+
+
+    @Test
+    void selectByNewId() {
+        Student student = studentMapper.selectByNewId(1);
+
+        System.out.println(student);
+
+    }
+
+
+    @Test
+    void selectByIdAssociation(){
+        Student student = studentMapper.selectByIdAssociation(2);
+
+        System.out.println(student);
+    }
+
+    @Test
+    void selectByIdStep1(){
+        Student student = studentMapper.selectByIdStep1(2);
+
+        System.out.println(student.getId());
+        System.out.println("class");
+        System.out.println(student.getClazz().getCname());
+    }
 
 
 }

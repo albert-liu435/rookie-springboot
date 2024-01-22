@@ -39,4 +39,10 @@ public class Student {
 
     private Date createdAt;
 
+
+    private Integer sid;
+
+    private Classz clazz;  //clazz是一的一方
+
+
 }

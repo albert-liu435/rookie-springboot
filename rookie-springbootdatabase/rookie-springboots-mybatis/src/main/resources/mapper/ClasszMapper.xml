@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rookie.bigdata.mapper.ClasszMapper">
+
+    <!--分步查询第二步：根据cid获取班级信息-->
+    <select id="selectByIdStep2" resultType="com.rookie.bigdata.pojo.Classz">
+        select
+            cid,cname
+        from
+            t_class
+        where
+            cid = #{cid}
+    </select>
+
+
+    <resultMap id="classResultMap" type="com.rookie.bigdata.pojo.Classz">
+        <id property="cid" column="cid" />
+        <result property="cname" column="cname" />
+        <!--一对多，这里是collection，collection是集合的意思-->
+        <!--ofType属性用来指定结合当中的元素类型即集合中的泛型-->
+        <collection property="studentList" ofType="com.rookie.bigdata.pojo.Student">
+            <id property="id" column="id" />
+            <result property="name" column="name" />
+        </collection>
+    </resultMap>
+    <select id="selectByCollection" resultMap="classResultMap">
+        select
+            c.cid,c.cname,s.id,s.name
+        from
+            t_class c
+                left join
+            t_student s
+            on
+                c.cid = s.sid
+        where
+            c.cid = #{cid}
+    </select>
+
+
+    <!--分步查询第一句：根据班级的cid查询班级信息-->
+    <resultMap id="classResultMapStep" type="com.rookie.bigdata.pojo.Classz">
+        <id property="cid" column="cid" />
+        <result property="cname" column="cname" />
+        <association property="studentList" column="sid"
+                     select="com.rookie.bigdata.StudentMapper.selectByStep2"
+        />
+    </resultMap>
+    <select id="selectByStep1" resultMap="classResultMapStep">
+        select
+            cid,cname
+        from
+            t_class
+        where
+            cid = #{cid}
+    </select>
+
+</mapper>

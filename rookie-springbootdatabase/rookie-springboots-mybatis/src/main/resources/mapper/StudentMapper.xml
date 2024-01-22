@@ -3,7 +3,7 @@
 <mapper namespace="com.rookie.bigdata.mapper.StudentMapper">
 
 
-    <select id="selectById" resultType="Student">
+    <select id="selectById" resultType="com.rookie.bigdata.pojo.Student">
         select id,
                name,
                age,
@@ -17,7 +17,7 @@
     </select>
 
 
-    <select id="selectByName" resultType="Student">
+    <select id="selectByName" resultType="com.rookie.bigdata.pojo.Student">
         select id,
                name,
                age,
@@ -30,7 +30,7 @@
         where name = #{name,javaType=String,jdbcType=VARCHAR};
     </select>
 
-    <select id="selectByBirth" resultType="Student">
+    <select id="selectByBirth" resultType="com.rookie.bigdata.pojo.Student">
         select id,
                name,
                age,
@@ -43,7 +43,7 @@
         where birth = #{birth};
     </select>
 
-    <select id="selectBySex" resultType="Student">
+    <select id="selectBySex" resultType="com.rookie.bigdata.pojo.Student">
         select id,
                name,
                age,
@@ -58,9 +58,142 @@
 
 
     <insert id="insertStudentByMap" parameterType="map">
-        insert into
-            t_student
-        values
-            (null,#{姓名},#{年龄},#{身高},#{生日},#{性别},now(),now())
+        insert into t_student(id, name, age, height, birth, sex, createTime, created_at)
+        values (null, #{姓名}, #{年龄}, #{身高}, #{生日}, #{性别}, now(), now())
     </insert>
+
+
+    <insert id="insertStudentByPOJO">
+        insert into t_student(id, name, age, height, birth, sex, createTime, created_at)
+        values (null, #{name}, #{age}, #{height}, #{birth}, #{sex}, #{createTime}, #{createdAt})
+    </insert>
+
+
+    <select id="selectByNameAndSex" resultType="com.rookie.bigdata.pojo.Student">
+        select id,
+               name,
+               age,
+               height,
+               birth,
+               sex,
+               createTime,
+               created_at as createdAt
+        from oasys.t_student
+        where name = #{nnn}
+          and sex = #{sss};
+    </select>
+
+    <!--记住：前者是属性名，后者是字段名 前面了解过 这里再复习一下-->
+    <!--多对一映射的第一种方式：一条SQL语句，级联属性映射-->
+    <resultMap id="studentResultMap" type="com.rookie.bigdata.pojo.Student">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="clazz.cid" column="cid"/>
+        <result property="clazz.cname" column="cname"/>
+    </resultMap>
+
+    <select id="selectByNewId" resultMap="studentResultMap">
+        select s.id,
+               s.name,
+               c.cid,
+               c.cname
+        from t_student s
+                 left join
+             t_class c
+             on
+                 s.sid = c.cid
+        where s.id = #{id}
+    </select>
+
+
+    <!--
+    association翻译为关联，一个Student对象关联一个Class对象
+        property：提供要映射的POJO的参数名
+        javaType：用来指定要映射的java类型
+-->
+    <resultMap id="studentResultMapAssociation" type="com.rookie.bigdata.pojo.Student">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <association property="clazz" javaType="com.rookie.bigdata.pojo.Classz">
+            <id property="cid" column="cid"/>
+            <result property="cname" column="cname"/>
+        </association>
+    </resultMap>
+
+    <select id="selectByIdAssociation" resultMap="studentResultMapAssociation">
+        select s.id,
+               s.name,
+               c.cid,
+               c.cname
+        from t_student s
+                 left join
+             t_class c
+             on
+                 s.sid = c.cid
+        where s.id = #{id}
+    </select>
+
+
+    <!--
+    分步查询的有点：
+        第一：复用性增强。可以重复利用（大步分成小步，每一小步更加可以重新利用）
+        第二：可以充分利用他们的延迟加载/懒加载机制
+-->
+    <!--两条SQL语句，完成多对一的多步查询-->
+    <!--这里是第一步：根据学生的id查询学生的所有信息，这些信息当中含有班级id(cid)-->
+<!--    <resultMap id="studentResultMapByStep" type="com.rookie.bigdata.pojo.Student">-->
+<!--        <id property="id" column="id"/>-->
+<!--        <result property="name" column="name"/>-->
+<!--        <association property="clazz"-->
+<!--                     select="com.rookie.bigdata.mapper.ClassMapper.selectByIdStep2"-->
+<!--                     column="sid"-->
+<!--        />-->
+<!--    </resultMap>-->
+<!--    <select id="selectByIdStep1" resultMap="studentResultMapByStep">-->
+<!--        select id,-->
+<!--               name,-->
+<!--               sid-->
+<!--        from t_student-->
+<!--        where id = #{id}-->
+<!--    </select>-->
+
+
+    <!--
+		延迟加载的核心机制：用的时候再执行查询语句，不用的时候不查询，可以提高性能。
+		默认情况下是没有开启延迟加载的，需要手动设置开启。
+		开启延迟加载的方法：association标签中添加fetchType="lazy"
+		但是这里只是开启默认的延迟加载，仅局限于此Mapper映射文件，需要在核心配置文件里设置
+
+		如果开启了全局延迟加载，但又不想在某个映射文件中开启，那么就需要在association标签设置
+					fetchType="eager"
+	-->
+
+    <resultMap id="studentResultMapByStep" type="com.rookie.bigdata.pojo.Student">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <association property="clazz"
+                     select="com.rookie.bigdata.mapper.ClasszMapper.selectByIdStep2"
+                     column="sid"
+                     fetchType="lazy"
+        />
+    </resultMap>
+    <select id="selectByIdStep1" resultMap="studentResultMapByStep">
+        select id,
+               name,
+               sid
+        from t_student
+        where id = #{id}
+    </select>
+
+
+    <!--分步查询第二步：根据传过来的班级编号查询学生信息-->
+    <select id="selectByStep2" resultType="com.rookie.bigdata.pojo.Student">
+        select
+            sid,sname
+        from
+            t_student
+        where
+            sid = #{sid}
+    </select>
+
 </mapper>
