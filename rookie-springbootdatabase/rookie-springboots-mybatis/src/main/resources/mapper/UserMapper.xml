@@ -3,7 +3,7 @@
 <mapper namespace="com.rookie.bigdata.mapper.UserMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.rookie.bigdata.domain.User">
+    <resultMap id="BaseResultMap" type="com.rookie.bigdata.pojo.User">
         <id column="id" property="id" />
         <result column="age" property="age" />
         <result column="name" property="name" />
