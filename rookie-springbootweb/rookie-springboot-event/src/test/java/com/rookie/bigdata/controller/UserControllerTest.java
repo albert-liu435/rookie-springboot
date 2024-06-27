@@ -1,8 +1,9 @@
 package com.rookie.bigdata.controller;
 
-import org.junit.*;
-import org.junit.runner.RunWith;
+
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -14,7 +15,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import static org.junit.Assert.*;
 
 /**
  * @ClassName UserControllerTest
@@ -24,11 +24,13 @@ import static org.junit.Assert.*;
  * @Version 1.0
  */
 @SpringBootTest
-@RunWith(SpringRunner.class)
+@AutoConfigureMockMvc
+//@RunWith(SpringRunner.class)
 public class UserControllerTest {
     /**
      * 模拟MVC对象，通过MockMvcBuilders.webAppContextSetup(this.wac).build()初始化。
      */
+    @Autowired
     private MockMvc mockMvc;
 
     /**
@@ -40,35 +42,35 @@ public class UserControllerTest {
     /**
      * 类加载前
      */
-    @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
-    }
-
-    /**
-     * 类加载后
-     */
-    @AfterClass
-    public static void tearDownAfterClass() throws Exception {
-    }
-
-    /**
-     * 实例创建前
-     */
-    @Before
-    public void setUp() throws Exception {
-        this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
-    }
+//    @BeforeClass
+//    public static void setUpBeforeClass() throws Exception {
+//    }
+//
+//    /**
+//     * 类加载后
+//     */
+//    @AfterClass
+//    public static void tearDownAfterClass() throws Exception {
+//    }
+//
+//    /**
+//     * 实例创建前
+//     */
+//    @Before
+//    public void setUp() throws Exception {
+//        this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
+//    }
 
     /**
      * 实例创建后
      */
-    @After
-    public void tearDown() throws Exception {
-
-    }
+//    @After
+//    public void tearDown() throws Exception {
+//
+//    }
     @Test
     public void getUser2() throws Exception{
-        MvcResult result=mockMvc.perform(MockMvcRequestBuilders.get("/getuser2")
+        MvcResult result=mockMvc.perform(MockMvcRequestBuilders.get("/event/getuser2")
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print())
@@ -78,7 +80,7 @@ public class UserControllerTest {
 
     @Test
     public void getUser()  throws Exception{
-        MvcResult result=mockMvc.perform(MockMvcRequestBuilders.get("/getuser")
+        MvcResult result=mockMvc.perform(MockMvcRequestBuilders.get("/event/getuser")
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print())

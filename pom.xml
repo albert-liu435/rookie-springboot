@@ -11,7 +11,7 @@
     <modules>
         <module>rookie-springboot-annotation</module>
         <!--        <module>rookie-springboot-retry</module>-->
-        <!--        <module>rookie-springbootweb</module>-->
+                <module>rookie-springbootweb</module>
         <!--        <module>rookie-springbootjson</module>-->
         <!--        <module>rookie-springbootredis</module>-->
         <!--        <module>rookie-springbootdatabase</module>-->
