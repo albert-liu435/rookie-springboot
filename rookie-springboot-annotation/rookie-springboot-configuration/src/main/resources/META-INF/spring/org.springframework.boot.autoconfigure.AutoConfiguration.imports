@@ -1,1 +1,4 @@
 com.rookie.bigdata.boot.autoconfiguration.MyAutoConfiguration
+com.rookie.bigdata.boot.autoconfiguration.autoconfigureorder.bean.AutoconfigureOrderBeanA
+com.rookie.bigdata.boot.autoconfiguration.autoconfigureorder.bean.AutoconfigureOrderBeanB
+com.rookie.bigdata.boot.autoconfiguration.autoconfigureorder.bean.AutoconfigureOrderBeanC

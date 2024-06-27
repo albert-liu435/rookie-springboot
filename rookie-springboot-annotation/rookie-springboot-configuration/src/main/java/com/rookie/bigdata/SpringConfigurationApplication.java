@@ -1,5 +1,6 @@
 package com.rookie.bigdata;
 
+import com.rookie.bigdata.boot.autoconfiguration.autoconfigureorder.bean.AutoconfigureOrderBeanA;
 import com.rookie.bigdata.boot.autoconfiguration.bean.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -15,8 +16,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringConfigurationApplication {
 
-    @Autowired
-    private A a;
+//    @Autowired
+//    private AutoconfigureOrderBeanA autoconfigureOrderBeanA;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringConfigurationApplication.class, args);

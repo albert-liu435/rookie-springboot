@@ -4,6 +4,9 @@ import com.rookie.bigdata.boot.autoconfiguration.bean.A;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.AutoConfigureBefore;
+import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 
@@ -18,10 +21,11 @@ import org.springframework.context.annotation.Bean;
 //https://blog.csdn.net/weixin_43888891/article/details/127473290
 //@AutoConfiguration需要跟META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports使用，如本例中添加com.rookie.bigdata.autoconfiguration.MyAutoConfiguration使用
 @AutoConfiguration
-//@Configuration
 
-//@Configuration(proxyBeanMethods = false)
-//@ConditionalOnClass(A.class)
+//@AutoConfigureBefore 与@AutoConfigureAfter 用法类似
+//@AutoConfigureBefore
+//@AutoConfigureAfter
+//AutoConfigureOrder
 public class MyAutoConfiguration {
 
     public static final Logger logger = LoggerFactory.getLogger(MyAutoConfiguration.class);

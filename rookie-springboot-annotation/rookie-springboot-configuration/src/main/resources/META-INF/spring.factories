@@ -1,0 +1,7 @@
+## Auto Configure
+##https://www.cnblogs.com/throwable/p/16950353.html
+##spring.factories功能在Spring Boot 2.7已经废弃，在Spring Boot 3.0彻底移除，用于在META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports文件替代
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+#com.rookie.bigdata.boot.autoconfiguration.autoconfigureorder.bean.AutoconfigureOrderBeanA,\
+#com.rookie.bigdata.boot.autoconfiguration.autoconfigureorder.bean.AutoconfigureOrderBeanB,\
+#com.rookie.bigdata.boot.autoconfiguration.autoconfigureorder.bean.AutoconfigureOrderBeanC

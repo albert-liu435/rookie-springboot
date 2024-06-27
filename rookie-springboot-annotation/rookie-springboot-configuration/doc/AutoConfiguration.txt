@@ -1,0 +1,23 @@
+1、AutoConfiguration自动装配
+在META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports中添加含有@AutoConfiguration注解的类的全路径就可以如：com.rookie.bigdata.boot.autoconfiguration.MyAutoConfiguration
+导入入口为:AutoConfigurationImportSelector.AutoConfigurationGroup#process()
+ImportCandidates#load(Class<?> annotation, ClassLoader classLoader)
+
+参考:https://www.cnblogs.com/Xianhuii/p/17105291.html
+https://blog.csdn.net/qq_38257958/article/details/139225668
+
+2、自动装配排序 AutoConfigureOrder
+
+排序流程:
+根据类名按照字母表递增排序
+根据 @AutoConfigureOrder value 值（默认：0）递增排序
+根据 @AutoConfigureBefore 和 @AutoConfigureAfter 调整排序
+
+
+AutoConfigurationSorter
+参考:https://www.cnblogs.com/lw5946/p/11689890.html
+
+
+3、AutoConfigurationPackage
+@AutoConfigurationPackage是在springboot启动类注解@SpringBootApplication下的@EnableAutoConfiguration下。@AutoConfigurationPackage作用是指定springboot扫描包，默认就是扫描启动类同包下的类。可以通过@AutoConfigurationPackage来附加其他路径，然后springboot同样会进行扫描。
+参考：https://blog.csdn.net/weixin_43888891/article/details/127478734
