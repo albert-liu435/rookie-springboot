@@ -1,13 +1,11 @@
-package com.rookie.bigdata.autoconfiguration;
+package com.rookie.bigdata.boot.autoconfiguration;
 
-import com.rookie.bigdata.autoconfiguration.bean.A;
+import com.rookie.bigdata.boot.autoconfiguration.bean.A;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 
 /**
@@ -18,6 +16,7 @@ import org.springframework.context.annotation.Configuration;
  */
 
 //https://blog.csdn.net/weixin_43888891/article/details/127473290
+//@AutoConfiguration需要跟META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports使用，如本例中添加com.rookie.bigdata.autoconfiguration.MyAutoConfiguration使用
 @AutoConfiguration
 //@Configuration
 

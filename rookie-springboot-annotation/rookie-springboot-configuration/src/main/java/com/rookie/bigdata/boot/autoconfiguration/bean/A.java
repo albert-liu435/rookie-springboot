@@ -1,4 +1,4 @@
-package com.rookie.bigdata.autoconfiguration.bean;
+package com.rookie.bigdata.boot.autoconfiguration.bean;
 
 /**
  * @Author rookie

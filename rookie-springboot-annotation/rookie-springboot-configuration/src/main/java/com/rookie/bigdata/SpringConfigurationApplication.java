@@ -1,6 +1,6 @@
 package com.rookie.bigdata;
 
-import com.rookie.bigdata.autoconfiguration.bean.A;
+import com.rookie.bigdata.boot.autoconfiguration.bean.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
