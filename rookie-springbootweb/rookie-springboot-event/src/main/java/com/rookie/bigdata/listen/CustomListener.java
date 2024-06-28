@@ -22,7 +22,7 @@ public class CustomListener implements ApplicationListener<SendEmailEvent> {
         send(event.getUser().getName());
 
         Object source = event.getSource();
-        System.out.println();
+
     }
     public void send(String username) {
         String code = UUID.randomUUID().toString().replace("_", "").substring(0, 4);

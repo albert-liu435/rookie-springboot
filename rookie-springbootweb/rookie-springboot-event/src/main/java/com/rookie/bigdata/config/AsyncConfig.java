@@ -28,23 +28,21 @@ public class AsyncConfig implements AsyncConfigurer {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-//    @Configuration
-//    @ComponentScan(basePackages = {"com.tuling.event"})
-//    @EnableAsync
-//    public class MainConfig {
-        /*
-            往SimpleApplicationEventMulticaster设置taskExecutor则为异步事件
-             或者使用@Async
-         */
-        @Bean(name = "applicationEventMulticaster")
-        public ApplicationEventMulticaster simpleApplicationEventMulticaster() {
-            SimpleApplicationEventMulticaster eventMulticaster
-                    = new SimpleApplicationEventMulticaster();
-            eventMulticaster.setTaskExecutor(new SimpleAsyncTaskExecutor());
-            return eventMulticaster;
-        }
+    /**
+     * 可以查看AbstractApplicationContext#initApplicationEventMulticaster方法
+     * 往SimpleApplicationEventMulticaster设置taskExecutor则为异步事件
+     * 或者使用@Async
+     *
+     * @return
+     */
+    @Bean(name = "applicationEventMulticaster")
+    public ApplicationEventMulticaster simpleApplicationEventMulticaster() {
+        SimpleApplicationEventMulticaster eventMulticaster
+                = new SimpleApplicationEventMulticaster();
+        eventMulticaster.setTaskExecutor(new SimpleAsyncTaskExecutor());
+        return eventMulticaster;
+    }
 //    }
-
 
 
     @Override

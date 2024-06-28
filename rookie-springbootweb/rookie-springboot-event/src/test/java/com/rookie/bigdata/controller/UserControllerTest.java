@@ -26,7 +26,7 @@ import org.springframework.web.context.WebApplicationContext;
 @SpringBootTest
 @AutoConfigureMockMvc
 //@RunWith(SpringRunner.class)
-public class UserControllerTest {
+ class UserControllerTest {
     /**
      * 模拟MVC对象，通过MockMvcBuilders.webAppContextSetup(this.wac).build()初始化。
      */
@@ -39,35 +39,6 @@ public class UserControllerTest {
     @Autowired
     private WebApplicationContext wac;
 
-    /**
-     * 类加载前
-     */
-//    @BeforeClass
-//    public static void setUpBeforeClass() throws Exception {
-//    }
-//
-//    /**
-//     * 类加载后
-//     */
-//    @AfterClass
-//    public static void tearDownAfterClass() throws Exception {
-//    }
-//
-//    /**
-//     * 实例创建前
-//     */
-//    @Before
-//    public void setUp() throws Exception {
-//        this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
-//    }
-
-    /**
-     * 实例创建后
-     */
-//    @After
-//    public void tearDown() throws Exception {
-//
-//    }
     @Test
     public void getUser2() throws Exception{
         MvcResult result=mockMvc.perform(MockMvcRequestBuilders.get("/event/getuser2")
