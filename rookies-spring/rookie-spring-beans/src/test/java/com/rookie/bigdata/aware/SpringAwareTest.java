@@ -9,7 +9,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.StandardEnvironment;
 
-import static org.junit.Assert.*;
 
 /**
  * @author rookie
@@ -18,19 +17,7 @@ import static org.junit.Assert.*;
  */
 public class SpringAwareTest {
 
-    @Test
-    public void test1(){
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("/aware/spring-aware.xml");
-//        User user = (User) applicationContext.getBean("user");
-//        System.out.println(user);
-        SpringEnvironment springsEnvironment = (SpringEnvironment)applicationContext.getBean("springsEnvironment");
-        Environment environment = springsEnvironment.getEnvironment();
 
-        SpringAware springAware = (SpringAware) applicationContext.getBean("springAware");
-        ApplicationContext applicationContext1 = springAware.getApplicationContext();
-        User user = (User) applicationContext1.getBean("user");
-        System.out.println(user);
-    }
 
     @Test
     public void test2(){

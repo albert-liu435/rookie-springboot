@@ -14,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Version 1.0
  */
 @SpringBootApplication
+
 public class SpringConfigurationApplication {
 
 //    @Autowired
