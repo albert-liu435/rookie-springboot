@@ -1,0 +1,26 @@
+
+1、Filter方式1
+使用原生注解
+使用@WebFilter(filterName = "myFilter", urlPatterns = "/*")注解和@ServletComponentScan(basePackages = "com.rookie.bigdata.filter.web")配合使用
+@ServletComponentScan 注解,这个注解使用 @Import 导入了 ServletComponentScanRegistrar：
+
+ServletComponentScanRegistrar -->ServletComponentRegisteringPostProcessor -->WebFilterHandler
+
+
+2、Filter方式2
+使用 SpringBoot 提供的 FilterRegistrationBean
+
+3、通过使用Component注解来设置Filter
+
+4、使用 DelegatingFilterProxyRegistrationBean 注册已经注册为 Bean 的 Filter
+
+DelegatingFilterProxyRegistrationBean 通过传入的 targetBeanName 在 IoC 容器 中查找该 Filter 的 Bean，并通过 DelegatingFilterProxy 生成基于该 Bean 的代理 Filter 对象，
+而 FilterRegistrationBean 则是直接设置一个 Filter，因此该 Filter 可以被 Spring 管理也可以不用被 Spring 管理，在被 Spring 管理的情况下，可以不定义 FilterRegistrationBean，
+也就是第 3 种方式，这种方式无法定义拦截规则，默认过滤所有请求。
+
+
+
+参考文档：https://blog.csdn.net/qiaohao0206/article/details/125658982
+https://blog.csdn.net/qiaohao0206/article/details/125655989
+http://shangyang.me/2019/03/28/spring-security-sca-9-javaconfig-02-delegatingfilterproxy/
+https://blog.csdn.net/andy_zhang2007/article/details/90399870

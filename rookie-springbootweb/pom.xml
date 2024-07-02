@@ -20,7 +20,7 @@
 <!--        <module>rookie-springboot-mybatisplus</module>-->
 <!--        <module>rookie-springboot-parameter</module>-->
 <!--        <module>rookie-springboot-kaptcha</module>-->
-<!--        <module>rookie-springboot-filter</module>-->
+        <module>rookie-springboot-filter</module>
 <!--        <module>rookie-springboot-schedule</module>-->
         <module>rookie-springboot-event</module>
     </modules>

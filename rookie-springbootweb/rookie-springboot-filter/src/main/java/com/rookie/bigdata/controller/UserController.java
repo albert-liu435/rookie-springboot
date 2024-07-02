@@ -15,7 +15,11 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
 
-//    @Log
+    /**
+     * http://localhost:8081/getuser
+     *
+     * @return
+     */
     @RequestMapping(value = "/getuser", method = RequestMethod.GET)
     public User getUser() {
 
@@ -36,8 +40,6 @@ public class UserController {
         return user;
 
     }
-
-
 
 
     /**

@@ -1,0 +1,4 @@
+springboot启动加载tomcat流程
+org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext#onRefresh-->org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext#createWebServer-->org.springframework.boot.web.embedded.tomcat#getWebServer
+
+

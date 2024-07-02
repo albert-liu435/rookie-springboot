@@ -1,27 +1,19 @@
 package com.rookie.bigdata.controller;
 
-import com.alibaba.fastjson2.JSONObject;
-import com.rookie.bigdata.domain.User;
-import org.junit.*;
-import org.junit.runner.RunWith;
+
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.context.WebApplicationContext;
 
-import static org.junit.Assert.*;
 
 /**
  * @ClassName UserControllerTest
@@ -30,63 +22,61 @@ import static org.junit.Assert.*;
  * @Date 2021/6/17 16:17
  * @Version 1.0
  */
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@RunWith(SpringRunner.class)
+//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+//@RunWith(SpringRunner.class)
+
+@SpringBootTest
+@AutoConfigureMockMvc
+@ActiveProfiles({"dev"})
 public class UserControllerTest {
     /**
      * 模拟MVC对象，通过MockMvcBuilders.webAppContextSetup(this.wac).build()初始化。
      */
+//    private MockMvc mockMvc;
+
+    @Autowired
     private MockMvc mockMvc;
 
     /**
      * 注入WebApplicationContext
      */
-    @Autowired
-    private WebApplicationContext wac;
+//    @Autowired
+//    private WebApplicationContext wac;
 
     /**
      * 类加载前
      */
-    @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
-    }
+//    @BeforeClass
+//    public static void setUpBeforeClass() throws Exception {
+//    }
 
     /**
      * 类加载后
      */
-    @AfterClass
-    public static void tearDownAfterClass() throws Exception {
-    }
+//    @AfterClass
+//    public static void tearDownAfterClass() throws Exception {
+//    }
 
     /**
      * 实例创建前
      */
-    @Before
-    public void setUp() throws Exception {
-        this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
-    }
+//    @Before
+//    public void setUp() throws Exception {
+//        this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
+//    }
 
     /**
      * 实例创建后
      */
-    @After
-    public void tearDown() throws Exception {
-
-    }
-    @Test
-    public void getUser2() throws Exception{
-        MvcResult result=mockMvc.perform(MockMvcRequestBuilders.get("/getuser2")
-                .accept(MediaType.APPLICATION_JSON))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andDo(MockMvcResultHandlers.print())
-                .andReturn();
-        System.out.println(result.getResponse().getContentAsString());
-    }
+//    @After
+//    public void tearDown() throws Exception {
+//
+//    }
 
     @Test
-    public void getUser()  throws Exception{
-        MvcResult result=mockMvc.perform(MockMvcRequestBuilders.get("/getuser")
-                .accept(MediaType.APPLICATION_JSON))
+    public void getUser() throws Exception {
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/getuser")
+                        .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print())
                 .andReturn();
@@ -94,6 +84,15 @@ public class UserControllerTest {
     }
 
 
+    @Test
+    public void getUser2() throws Exception {
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/getuser2")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andDo(MockMvcResultHandlers.print())
+                .andReturn();
+        System.out.println(result.getResponse().getContentAsString());
+    }
 
 
     /**
@@ -101,11 +100,11 @@ public class UserControllerTest {
      */
 //    @GetMapping(value = "/getTrim")
     @Test
-    public void getTrim(/*@RequestParam String username, @RequestParam String phone*/) throws Exception{
+    public void getTrim(/*@RequestParam String username, @RequestParam String phone*/) throws Exception {
 //        return username + "&" + phone;
-        MvcResult result=mockMvc.perform(MockMvcRequestBuilders.get("/getTrim")
-                .param("username","zhangsan ").param("phone","123456789 ")
-                /*.accept(MediaType.APPLICATION_JSON)*/)
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/getTrim")
+                                .param("username", "zhangsan ").param("phone", "123456789 ")
+                        /*.accept(MediaType.APPLICATION_JSON)*/)
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print())
                 .andReturn();
@@ -114,7 +113,7 @@ public class UserControllerTest {
 
 
     @Test
-    void exampleTest(@Autowired WebTestClient webClient) throws Exception{
+    void exampleTest(@Autowired WebTestClient webClient) throws Exception {
         webClient
                 .get().uri("/getTrim?username=abc &phone=123456 ")
                 .exchange()
