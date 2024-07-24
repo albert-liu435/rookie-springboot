@@ -10,33 +10,39 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-<!--        <module>rookie-springboot-fileupload</module>-->
+        <!--        <module>rookie-springboot-fileupload</module>-->
         <module>rookie-springboot-aop</module>
         <module>rookie-springboot-async</module>
-<!--        <module>rookie-springboot-cors</module>-->
-<!--        <module>rookie-springboot-junit4</module>-->
-<!--        <module>rookie-springboot-junit5</module>-->
-<!--        <module>rookie-springboot-Swagger</module>-->
-<!--        <module>rookie-springboot-mybatisplus</module>-->
-<!--        <module>rookie-springboot-parameter</module>-->
-<!--        <module>rookie-springboot-kaptcha</module>-->
+        <!--        <module>rookie-springboot-cors</module>-->
+        <!--        <module>rookie-springboot-junit4</module>-->
+        <!--        <module>rookie-springboot-junit5</module>-->
+        <!--        <module>rookie-springboot-Swagger</module>-->
+        <!--        <module>rookie-springboot-mybatisplus</module>-->
+        <!--        <module>rookie-springboot-parameter</module>-->
+        <!--        <module>rookie-springboot-kaptcha</module>-->
         <module>rookie-springboot-filter</module>
-<!--        <module>rookie-springboot-schedule</module>-->
+        <!--        <module>rookie-springboot-schedule</module>-->
         <module>rookie-springboot-event</module>
     </modules>
     <artifactId>rookie-springbootweb</artifactId>
 
-<dependencies>
-    <dependency>
-        <groupId>cn.hutool</groupId>
-        <artifactId>hutool-all</artifactId>
-        <version>5.8.24</version>
-    </dependency>
-    <dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <optional>true</optional>
-    </dependency>
+    <dependencies>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.24</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.alibaba.fastjson2/fastjson2 -->
+        <dependency>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+<!--            <version>2.0.52</version>-->
+        </dependency>
 
-</dependencies>
+    </dependencies>
 </project>

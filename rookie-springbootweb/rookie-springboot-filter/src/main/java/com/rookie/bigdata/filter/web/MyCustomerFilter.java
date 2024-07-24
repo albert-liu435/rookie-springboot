@@ -3,6 +3,7 @@ package com.rookie.bigdata.filter.web;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.annotation.Order;
 
 import java.io.IOException;
 
@@ -25,7 +26,7 @@ public class MyCustomerFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        log.info("我的过滤器MyCustomerFilter");
+        log.info("原生Filter-MyCustomerFilter");
         filterChain.doFilter(servletRequest, servletResponse);
     }
 

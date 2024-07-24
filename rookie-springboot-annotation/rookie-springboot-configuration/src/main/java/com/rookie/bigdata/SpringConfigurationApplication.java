@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.nio.file.Files;
+
 /**
  * @ClassName SpringCustomerRetryApplication
  * @Description SpringCustomerRetryApplication
@@ -21,6 +23,8 @@ public class SpringConfigurationApplication {
 //    private AutoconfigureOrderBeanA autoconfigureOrderBeanA;
 
     public static void main(String[] args) {
+
+
         SpringApplication.run(SpringConfigurationApplication.class, args);
 
 

@@ -1,4 +1,4 @@
-package com.rookie.bigdata.filter;
+package com.rookie.bigdata.filter.component;
 
 import jakarta.servlet.*;
 import lombok.extern.slf4j.Slf4j;
@@ -15,17 +15,17 @@ import java.io.IOException;
  * @Version 1.0
  */
 @Component
-@Order(-1)	// 可以指定优先级，不填的话默认为最小的优先级
+@Order(-4)	// 可以指定优先级，不填的话默认为最小的优先级
 @Slf4j
-public class ComponentFilter implements Filter {
+public class ComponentUser2Filter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        log.info("init ComponentFilter");
+        log.info("init ComponentUser2Filter");
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        log.info("ComponentFilter doFilter");
+        log.info("ComponentUser2Filter doFilter");
         chain.doFilter(request, response);
     }
 

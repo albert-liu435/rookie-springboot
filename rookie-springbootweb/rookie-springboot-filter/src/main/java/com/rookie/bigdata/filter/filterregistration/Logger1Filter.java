@@ -1,4 +1,4 @@
-package com.rookie.bigdata.filter;
+package com.rookie.bigdata.filter.filterregistration;
 
 import jakarta.servlet.*;
 import lombok.extern.slf4j.Slf4j;
@@ -13,17 +13,17 @@ import java.io.IOException;
  * @Version 1.0
  */
 @Slf4j
-public class LoggerFilter implements Filter {
+public class Logger1Filter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        log.info("init LoggerFilter");
+        log.info("init Logger1Filter");
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        log.info("LoggerFilter before doFilter");
+        log.info("Logger1Filter before doFilter");
         chain.doFilter(request, response);
-        log.info("LoggerFilter after doFilter");
+        log.info("Logger1Filter after doFilter");
     }
 
     @Override
