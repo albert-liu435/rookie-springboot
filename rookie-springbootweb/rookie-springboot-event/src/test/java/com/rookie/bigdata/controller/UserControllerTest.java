@@ -26,7 +26,7 @@ import org.springframework.web.context.WebApplicationContext;
 @SpringBootTest
 @AutoConfigureMockMvc
 //@RunWith(SpringRunner.class)
- class UserControllerTest {
+class UserControllerTest {
     /**
      * 模拟MVC对象，通过MockMvcBuilders.webAppContextSetup(this.wac).build()初始化。
      */
@@ -40,9 +40,9 @@ import org.springframework.web.context.WebApplicationContext;
     private WebApplicationContext wac;
 
     @Test
-    public void getUser2() throws Exception{
-        MvcResult result=mockMvc.perform(MockMvcRequestBuilders.get("/event/getuser2")
-                .accept(MediaType.APPLICATION_JSON))
+    public void getUser2() throws Exception {
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/event/getuser2")
+                        .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print())
                 .andReturn();
@@ -50,9 +50,9 @@ import org.springframework.web.context.WebApplicationContext;
     }
 
     @Test
-    public void getUser()  throws Exception{
-        MvcResult result=mockMvc.perform(MockMvcRequestBuilders.get("/event/getuser")
-                .accept(MediaType.APPLICATION_JSON))
+    public void getUser() throws Exception {
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/event/getuser")
+                        .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print())
                 .andReturn();

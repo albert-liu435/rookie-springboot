@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationEvent;
 
 /**
  * @Class SendEmailEvent
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/3/16 18:30
  * @Version 1.0

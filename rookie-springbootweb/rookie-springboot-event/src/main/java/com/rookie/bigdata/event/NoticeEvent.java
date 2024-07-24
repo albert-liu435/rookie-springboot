@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationEvent;
 
 /**
  * @Class NoticeEvent
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/3/17 9:47
  * @Version 1.0

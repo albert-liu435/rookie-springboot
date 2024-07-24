@@ -2,7 +2,7 @@ package com.rookie.bigdata.event;
 
 /**
  * @Class AnnoEvent
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/3/17 10:33
  * @Version 1.0
