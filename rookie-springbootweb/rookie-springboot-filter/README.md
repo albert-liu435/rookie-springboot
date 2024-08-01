@@ -61,7 +61,7 @@ public Filter ComponentUser4Filter() {
     }
 ```
 
-
+#### 使用 DelegatingFilterProxyRegistrationBean 注册已经注册为 Bean 的 Filter
 
 参考文档：[WebFilter怎么控制多个filter的执行顺序](https://www.cnblogs.com/nextgg/p/7665814.html)
 
@@ -72,3 +72,4 @@ public Filter ComponentUser4Filter() {
 [Spring Boot Web Servlet : DelegatingFilterProxyRegistrationBean](https://blog.csdn.net/andy_zhang2007/article/details/90399870)
 
 [Spring Security 源码分析九：Java config - 加载 DelegatingFilterProxy](http://shangyang.me/2019/03/28/spring-security-sca-9-javaconfig-02-delegatingfilterproxy/)
+
