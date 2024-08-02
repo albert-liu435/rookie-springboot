@@ -1,9 +1,11 @@
 package com.rookie.bigdata.annotation;
 
 import com.rookie.bigdata.validator.QsmSpecifiedValidator;
+import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
 
-import javax.validation.Constraint;
-import javax.validation.Payload;
+//import javax.validation.Constraint;
+//import javax.validation.Payload;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Repeatable;
 import java.lang.annotation.Retention;

@@ -1,15 +1,16 @@
 package com.rookie.bigdata.validator;
 
 import com.rookie.bigdata.annotation.QsmSpecifiedSelector;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 import lombok.SneakyThrows;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+
 import java.lang.reflect.Method;
 
 /**
  * @Classname QsmSpecifiedValidator
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2021/8/18 10:00
  * @Version 1.0
