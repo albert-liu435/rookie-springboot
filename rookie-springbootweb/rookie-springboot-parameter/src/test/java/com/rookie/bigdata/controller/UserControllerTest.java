@@ -17,7 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 /**
  * @Classname UserControllerTest
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2021/8/18 9:47
  * @Version 1.0
@@ -30,7 +30,7 @@ class UserControllerTest {
 
 
     @Autowired
-    private MockMvc mockMvc;
+     MockMvc mockMvc;
 
     @Test
     void addUser() throws Exception{

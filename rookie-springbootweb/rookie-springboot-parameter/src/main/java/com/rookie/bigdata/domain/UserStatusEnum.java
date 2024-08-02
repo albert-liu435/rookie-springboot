@@ -2,7 +2,7 @@ package com.rookie.bigdata.domain;
 
 /**
  * @Classname UserStatusEnum
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2021/8/18 9:43
  * @Version 1.0
