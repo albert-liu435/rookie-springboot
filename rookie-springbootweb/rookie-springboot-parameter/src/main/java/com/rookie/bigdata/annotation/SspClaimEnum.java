@@ -5,7 +5,7 @@ import lombok.Getter;
 
 /**
  * @Classname SspClaimEnum
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2021/8/18 10:02
  * @Version 1.0
