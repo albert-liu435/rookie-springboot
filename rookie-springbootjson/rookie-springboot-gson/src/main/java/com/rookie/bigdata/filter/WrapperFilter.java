@@ -2,9 +2,10 @@ package com.rookie.bigdata.filter;
 
 
 import com.rookie.bigdata.common.RequestWrapper;
+import jakarta.servlet.*;
+import jakarta.servlet.http.HttpServletRequest;
 
-import javax.servlet.*;
-import javax.servlet.http.HttpServletRequest;
+
 import java.io.IOException;
 
 /**
@@ -16,7 +17,7 @@ import java.io.IOException;
  */
 //@Component
 //@WebFilter(filterName = "channelFilter", urlPatterns = {"/*"})
-public class WrapperFilter implements Filter{
+public class WrapperFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
     }

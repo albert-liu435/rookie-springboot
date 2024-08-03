@@ -10,7 +10,7 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
-import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.StringUtils;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -50,7 +50,7 @@ public class DateNullAdapter extends TypeAdapter<Date> {
             return null;
         }
         String jsonStr = in.nextString();
-        if (StringUtils.isBlank(jsonStr)) {
+        if (StringUtils.isEmpty(jsonStr)) {
             return null;
         } else {
             return deserializeToDate(jsonStr);
