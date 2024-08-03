@@ -13,6 +13,7 @@
     <artifactId>rookie-springbootwebflux</artifactId>
 
     <modules>
+        <module>rookie-springboot-webflux-filterlogback</module>
         <module>rookie-springboot-webflux-helloworld</module>
         <!--        <module>rookie-spring-retry</module>-->
     </modules>
