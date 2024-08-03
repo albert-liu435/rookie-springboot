@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户列表</title>
+</head>
+<body>
+
+<table>
+    <legend>用户列表</legend>
+    <thead>
+        <tr>
+            <th>用户名</th>
+            <th>年龄</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="user: ${users}">
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.age}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

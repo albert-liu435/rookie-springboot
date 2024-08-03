@@ -17,20 +17,20 @@
         <module>rookie-springboot-webflux-filterlogback</module>
         <module>rookie-springboot-webflux-helloworld</module>
         <module>rookie-springboot-webflux-r2dbcmysql</module>
-        <!--        <module>rookie-spring-retry</module>-->
+        <module>rookie-springboot-webflux-thymeleaf</module>
     </modules>
 
-<dependencies>
-    <dependency>
-        <groupId>cn.hutool</groupId>
-        <artifactId>hutool-all</artifactId>
-        <version>${hutool.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <optional>true</optional>
-    </dependency>
+    <dependencies>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
 
-</dependencies>
+    </dependencies>
 </project>
