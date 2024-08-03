@@ -9,7 +9,7 @@
 //
 ///**
 // * @Classname KaptchaConfig
-// * @Description TODO
+// * @Description
 // * @Author rookie
 // * @Date 2021/10/12 14:21
 // * @Version 1.0

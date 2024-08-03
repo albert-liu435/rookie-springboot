@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @Classname WebConfig
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2021/9/16 17:46
  * @Version 1.0

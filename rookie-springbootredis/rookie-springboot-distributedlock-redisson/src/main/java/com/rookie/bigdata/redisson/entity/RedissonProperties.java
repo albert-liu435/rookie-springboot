@@ -8,7 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 
 /**
  * @Classname RedissonProperties
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/1/16 11:23
  * @Version 1.0

@@ -12,7 +12,7 @@
     <artifactId>rookie-springboot-gson</artifactId>
 
     <name>rookie-springboot-gson</name>
-    <!-- FIXME change it to the project's website -->
+    <!--  change it to the project's website -->
     <url>http://www.example.com</url>
 
     <properties>

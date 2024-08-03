@@ -12,7 +12,7 @@
     <artifactId>rookie-springboot-schedule</artifactId>
 
     <name>rookie-springboot-schedule</name>
-    <!-- FIXME change it to the project's website -->
+    <!--  change it to the project's website -->
     <url>http://www.example.com</url>
 
     <properties>

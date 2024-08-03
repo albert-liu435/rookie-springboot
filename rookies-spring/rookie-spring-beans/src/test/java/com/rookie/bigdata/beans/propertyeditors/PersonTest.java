@@ -8,7 +8,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * @Class PersonTest
- * @Description TODO
  * @Author rookie
  * @Date 2023/4/1 1:22
  * @Version 1.0

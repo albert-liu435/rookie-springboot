@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @Class RetryTemplate
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2024/1/2 14:12
  * @Version 1.0

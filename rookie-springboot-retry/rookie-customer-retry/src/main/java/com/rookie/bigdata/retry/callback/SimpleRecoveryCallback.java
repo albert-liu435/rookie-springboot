@@ -2,7 +2,7 @@ package com.rookie.bigdata.retry.callback;
 
 /**
  * @Class SimpleRecoveryCallback
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2024/1/2 14:19
  * @Version 1.0

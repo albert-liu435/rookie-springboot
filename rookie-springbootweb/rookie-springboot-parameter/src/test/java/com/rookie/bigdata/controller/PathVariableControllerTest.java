@@ -13,7 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 /**
  * @Class PathVariableControllerTest
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2024/8/2 14:03
  * @Version 1.0

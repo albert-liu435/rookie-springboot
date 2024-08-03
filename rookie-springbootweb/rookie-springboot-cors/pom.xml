@@ -12,7 +12,7 @@
     <artifactId>rookie-springboot-cors</artifactId>
 
     <name>rookie-springboot-cors</name>
-    <!-- FIXME change it to the project's website -->
+    <!--  change it to the project's website -->
     <url>http://www.example.com</url>
 
     <properties>

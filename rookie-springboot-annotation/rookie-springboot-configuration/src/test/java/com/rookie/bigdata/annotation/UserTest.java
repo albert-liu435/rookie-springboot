@@ -1,6 +1,10 @@
 package com.rookie.bigdata.annotation;
 
-import static org.junit.jupiter.api.Assertions.*;
+
+import com.rookie.bigdata.annotation.custom.Init;
+import org.junit.jupiter.api.Test;
+
+import java.lang.reflect.Field;
 
 /**
  * @Class UserTest
@@ -13,7 +17,7 @@ class UserTest {
 
 
     @Test
-    void test01() {
+    void test01() throws Exception{
         User user = new User();
         user.setAge("111");
         user.setName("www");

@@ -12,7 +12,7 @@
         <module>rookie-springboot-annotation</module>
         <!--        <module>rookie-springboot-retry</module>-->
                 <module>rookie-springbootweb</module>
-        <!--        <module>rookie-springbootjson</module>-->
+                <module>rookie-springbootjson</module>
         <!--        <module>rookie-springbootredis</module>-->
         <!--        <module>rookie-springbootdatabase</module>-->
 <!--                <module>rookies-spring</module>-->
@@ -24,9 +24,10 @@
         <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <spring.boot.version>3.3.1</spring.boot.version>
+        <spring.boot.version>3.3.2</spring.boot.version>
 
         <hutool.version>5.8.24</hutool.version>
+        <fast2.version>2.0.52</fast2.version>
         <!--        <mysql.version>5.1.47</mysql.version>-->
         <!--        <hutool.version>5.8.24</hutool.version>-->
         <!--        <weixin-java-pay.version>4.5.9.B</weixin-java-pay.version>-->
@@ -65,7 +66,7 @@
             <dependency>
                 <groupId>com.alibaba.fastjson2</groupId>
                 <artifactId>fastjson2</artifactId>
-                <version>2.0.52</version>
+                <version>${fast2.version}</version>
             </dependency>
         </dependencies>
 

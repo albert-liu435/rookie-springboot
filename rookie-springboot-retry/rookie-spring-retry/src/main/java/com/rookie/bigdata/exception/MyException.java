@@ -5,7 +5,7 @@ import lombok.Setter;
 
 /**
  * @Class MyException
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/12/28 16:43
  * @Version 1.0

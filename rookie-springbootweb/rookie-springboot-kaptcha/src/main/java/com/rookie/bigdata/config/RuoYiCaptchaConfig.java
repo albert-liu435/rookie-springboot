@@ -11,7 +11,7 @@ import static com.google.code.kaptcha.Constants.*;
 
 /**
  * @Classname RuoYiCaptchaConfig
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2021/10/12 14:32
  * @Version 1.0
