@@ -13,8 +13,10 @@
     <artifactId>rookie-springbootwebflux</artifactId>
 
     <modules>
+        <module>rookie-springboot-webflux-fileresource</module>
         <module>rookie-springboot-webflux-filterlogback</module>
         <module>rookie-springboot-webflux-helloworld</module>
+        <module>rookie-springboot-webflux-r2dbcmysql</module>
         <!--        <module>rookie-spring-retry</module>-->
     </modules>
 
