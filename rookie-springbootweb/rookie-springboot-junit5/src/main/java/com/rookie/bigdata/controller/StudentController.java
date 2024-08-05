@@ -40,7 +40,7 @@ public class StudentController {
 
 
     @RequestMapping(value = "/{name}", method = RequestMethod.GET)
-    public String getHello(@PathVariable String name) {
+    public String getHello(@PathVariable (value = "name") String name) {
         return "Hello " + name;
     }
 

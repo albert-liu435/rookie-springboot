@@ -14,8 +14,8 @@
         <module>rookie-springboot-aop</module>
         <module>rookie-springboot-async</module>
         <!--        <module>rookie-springboot-cors</module>-->
-        <!--        <module>rookie-springboot-junit4</module>-->
-        <!--        <module>rookie-springboot-junit5</module>-->
+                <module>rookie-springboot-junit4</module>
+                <module>rookie-springboot-junit5</module>
         <!--        <module>rookie-springboot-Swagger</module>-->
         <!--        <module>rookie-springboot-mybatisplus</module>-->
                 <module>rookie-springboot-parameter</module>
