@@ -10,10 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <!--        <module>rookie-springboot-fileupload</module>-->
+                <module>rookie-springboot-fileupload</module>
         <module>rookie-springboot-aop</module>
         <module>rookie-springboot-async</module>
-        <!--        <module>rookie-springboot-cors</module>-->
+                <module>rookie-springboot-cors</module>
                 <module>rookie-springboot-junit4</module>
                 <module>rookie-springboot-junit5</module>
         <!--        <module>rookie-springboot-Swagger</module>-->

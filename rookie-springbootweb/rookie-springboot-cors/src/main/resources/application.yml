@@ -3,7 +3,7 @@ spring:
     allowedOrigins:
       - http://www.baidu.com
       - http://www.google.com
+  profiles:
+    active: dev
 
-server:
-  port: 8084
 
