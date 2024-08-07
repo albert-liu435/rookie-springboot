@@ -22,7 +22,7 @@ public class CallableController {
     //请注意上面的两种case，一个正常返回，一个业务执行过程中，抛出来异常
 
 
-    @GetMapping(path = "get")
+    @GetMapping(path = "/get")
     public Callable<String> get() {
         Callable<String> callable = new Callable<String>() {
             @Override
