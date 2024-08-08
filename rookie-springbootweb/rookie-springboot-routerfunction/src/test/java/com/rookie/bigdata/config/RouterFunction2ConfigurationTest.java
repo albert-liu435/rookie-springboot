@@ -1,4 +1,4 @@
-package com.rookie.bigdata.controller;
+package com.rookie.bigdata.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -13,36 +13,35 @@ import java.nio.charset.StandardCharsets;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
- * @ClassName StudentControllerTest
- * @Description StudentControllerTest
- * @Author rookie   通junit4类似
- * @Date 2021/6/21 10:42
+ * @Class RouterFunction2ConfigurationTest
+ * @Description
+ * @Author rookie
+ * @Date 2024/8/8 17:49
  * @Version 1.0
  */
 @SpringBootTest
 @ActiveProfiles("dev")
 @AutoConfigureMockMvc
 @Slf4j
-class StudentControllerTest {
+class RouterFunction2ConfigurationTest {
 
-
-    private static final String NAME = "Tom";
+    @Autowired
+    MockMvc mvc;
 
     @Test
-    void getHello(@Autowired MockMvc mvc) throws Exception {
+    void serverrequestString() throws Exception {
+        Class<RouterFunction2Configuration> routerFunction2ConfigurationClass = RouterFunction2Configuration.class;
         // 模拟
         MvcResult mvcResult = mvc.perform(
-                        get("/" + NAME)
-                                .content("hello".getBytes(StandardCharsets.UTF_8))
-                )
-
-                .andExpect(status().isOk())
+                get("/router/function/handlerfunction/serverrequest/string?name=zhangsan")
+                        .content("hello".getBytes(StandardCharsets.UTF_8)
+                        ))
+                        .andExpect(status().isOk())
 //                .andExpect(content().string("Hello " + NAME))
-                .andReturn();
+                        .andReturn();
 
 
 //        System.out.println(mvcResult.getResponse());
@@ -50,8 +49,7 @@ class StudentControllerTest {
 
     }
 
-
-    void getHello() {
-
+    @Test
+    void getlBuildingRouters() {
     }
 }

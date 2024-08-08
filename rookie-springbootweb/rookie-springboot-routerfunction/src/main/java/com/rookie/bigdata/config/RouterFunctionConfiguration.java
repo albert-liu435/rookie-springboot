@@ -30,11 +30,12 @@ public class RouterFunctionConfiguration {
     @Bean
     public RouterFunction<ServerResponse> getModelBuildingRouters() {
 
-
+        //localhost:8080/router/function/model/hello
         return RouterFunctions.route(GET("/model/hello"), request -> {
                     log.info("处理getModelBuildingRouters:{}", "hello getModelBuildingRouters");
                     return ServerResponse.ok().body("hello getModelBuildingRouters");
                 })
+                //localhost:8080/router/function/model/user
                 .andRoute(GET("/model/user"), request -> {
                     User user = new User();
                     user.setUsername("zhangsan");
@@ -43,6 +44,7 @@ public class RouterFunctionConfiguration {
 //                    return ServerResponse.ok().body("hello test03");
                 })
 //                .andRoute(GET("/handler/user"), userHandler::getUserRespone)
+                //localhost:8080/router/function/handler/user
                 .andRoute(GET("/handler/user"), new HandlerFunction<ServerResponse>() {
                     @Override
                     public ServerResponse handle(ServerRequest request) throws Exception {
@@ -55,10 +57,12 @@ public class RouterFunctionConfiguration {
 
     @Bean
     public RouterFunction<ServerResponse> getModelBuildingRouters2() {
+        //localhost:8080/router/function/model2/hello
         return RouterFunctions.route(GET("/model2/hello"), request -> {
                     log.info("处理getModelBuildingRouters2:{}", "hello getModelBuildingRouters2");
                     return ServerResponse.ok().body("hello getModelBuildingRouters2");
                 })
+                //localhost:8080/router/function/model2/user
                 .andRoute(GET("/model2/user"), request -> {
                     User user = new User();
                     user.setUsername("lisi");
