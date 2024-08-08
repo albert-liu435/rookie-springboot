@@ -11,9 +11,11 @@
     <modules>
         <module>rookie-springboot-annotation</module>
         <!--        <module>rookie-springboot-retry</module>-->
+        <module>rookie-springboot-springdoc</module>
         <module>rookie-springbootweb</module>
         <module>rookie-springbootwebflux</module>
         <module>rookie-springbootjson</module>
+
         <!--        <module>rookie-springbootredis</module>-->
         <!--        <module>rookie-springbootdatabase</module>-->
         <!--                <module>rookies-spring</module>-->
@@ -57,6 +59,13 @@
                 <artifactId>hutool-all</artifactId>
                 <version>5.8.24</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>2.6.0</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

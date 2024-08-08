@@ -29,6 +29,8 @@ public class RouterFunctionConfiguration {
 
     @Bean
     public RouterFunction<ServerResponse> getModelBuildingRouters() {
+
+
         return RouterFunctions.route(GET("/model/hello"), request -> {
                     log.info("处理getModelBuildingRouters:{}", "hello getModelBuildingRouters");
                     return ServerResponse.ok().body("hello getModelBuildingRouters");
