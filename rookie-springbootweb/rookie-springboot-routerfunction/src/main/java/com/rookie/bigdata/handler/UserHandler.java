@@ -3,6 +3,7 @@ package com.rookie.bigdata.handler;
 import com.rookie.bigdata.domain.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.Validator;
 import org.springframework.web.servlet.function.ServerRequest;
 import org.springframework.web.servlet.function.ServerResponse;
 
@@ -17,6 +18,7 @@ import org.springframework.web.servlet.function.ServerResponse;
 @Slf4j
 public class UserHandler {
 
+//    private final Validator validator = new PersonValidator();
 
     public ServerResponse getUserRespone(ServerRequest req) {
         User user = new User();

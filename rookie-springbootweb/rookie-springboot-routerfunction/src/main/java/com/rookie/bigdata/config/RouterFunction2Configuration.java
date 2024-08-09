@@ -6,6 +6,7 @@ import org.apache.catalina.Server;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.MediaType;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.servlet.function.*;
 
@@ -25,14 +26,19 @@ import static org.springframework.web.servlet.function.RequestPredicates.GET;
 @Slf4j
 public class RouterFunction2Configuration {
 
+    /**
+     * HandlerFunction.ServerRequest
+     *
+     * @return
+     */
     @Bean
-    public RouterFunction<ServerResponse> getlHandlerFunction() {
+    public RouterFunction<ServerResponse> getlHandlerFunctionServerRequest() {
 
         RouterFunction<ServerResponse> routerFunction = RouterFunctions
                 .route(GET("/handlerfunction/serverrequest/string"), request -> {
                     String body = request.body(String.class);
                     Optional<String> name = request.param("name");
-                    log.info("获取请求的body{},name{}", body, name.get());
+                    log.info("获取请求的body {},name {}", body, name.get());
                     return ServerResponse.ok().body(name.get());
                 })
                 .andRoute(GET("/handlerfunction/serverrequest/list"), request -> {
@@ -43,6 +49,30 @@ public class RouterFunction2Configuration {
                 .andRoute(GET("/handlerfunction/serverrequest/params"), request -> {
                     MultiValueMap<String, String> params = request.params();
                     return ServerResponse.ok().body(params);
+                });
+
+        return routerFunction;
+    }
+
+    /**
+     * HandlerFunction.ServerResponse
+     *
+     * @return
+     */
+    @Bean
+    public RouterFunction<ServerResponse> getlHandlerFunctionServerResponse() {
+
+        RouterFunction<ServerResponse> routerFunction = RouterFunctions
+                .route(GET("/handlerfunction/serverresponse/user"), request -> {
+//                    String body = request.body(String.class);
+//                    Optional<String> name = request.param("name");
+//                    log.info("获取请求的body {},name {}", body, name.get());
+//                    return ServerResponse.ok().body(name.get());
+                    User user = new User();
+                    user.setUsername("zhangsan");
+                    user.setType(2);
+                    return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(user);
+
                 });
 
         return routerFunction;
