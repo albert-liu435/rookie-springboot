@@ -43,6 +43,8 @@ import org.springframework.security.oauth2.server.authorization.settings.TokenSe
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
+import org.springframework.security.web.util.matcher.AndRequestMatcher;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.security.web.util.matcher.MediaTypeRequestMatcher;
 
 import java.security.KeyPair;
@@ -107,7 +109,13 @@ public class OAuth2AuthorizationServerSecurityConfiguration {
                                 new MediaTypeRequestMatcher(MediaType.TEXT_HTML)
                         )
                 )
-                .logout(logOut->logOut.logoutSuccessUrl("http://rookie-tuwer.client.com:8900"))
+//                .logout(Customizer.withDefaults())
+                .logout(logOut->{
+                    AntPathRequestMatcher antPathRequestMatcher=new AntPathRequestMatcher("/logout","GET");
+
+                    logOut.logoutRequestMatcher(antPathRequestMatcher);
+                })
+//                .logout(logOut->logOut.logoutSuccessUrl("http://rookie-tuwer.client.com:8900"))
                 // 处理使用access token访问用户信息端点和客户端注册端点
                 .oauth2ResourceServer((resourceServer) -> resourceServer
                         .jwt(Customizer.withDefaults()));
@@ -129,7 +137,12 @@ public class OAuth2AuthorizationServerSecurityConfiguration {
                         .requestMatchers("/assets/**", "/webjars/**", "/login").permitAll()
                         .anyRequest().authenticated()
                 )
-                .logout(logOut->logOut.logoutSuccessUrl("http://rookie-tuwer.client.com:8900"))
+//                .logout(logOut->logOut.logoutSuccessUrl("http://rookie-tuwer.client.com:8900"))
+                .logout(logOut->{
+                    AntPathRequestMatcher antPathRequestMatcher=new AntPathRequestMatcher("/logout","GET");
+
+                    logOut.logoutRequestMatcher(antPathRequestMatcher);
+                })
                 // 指定登录页面,
                 .formLogin(formLogin ->
                         formLogin.loginPage("/login")
