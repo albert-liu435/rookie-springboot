@@ -107,7 +107,7 @@ public class OAuth2AuthorizationServerSecurityConfiguration {
                                 new MediaTypeRequestMatcher(MediaType.TEXT_HTML)
                         )
                 )
-
+                .logout(logOut->logOut.logoutSuccessUrl("http://rookie-tuwer.client.com:8900"))
                 // 处理使用access token访问用户信息端点和客户端注册端点
                 .oauth2ResourceServer((resourceServer) -> resourceServer
                         .jwt(Customizer.withDefaults()));
@@ -129,6 +129,7 @@ public class OAuth2AuthorizationServerSecurityConfiguration {
                         .requestMatchers("/assets/**", "/webjars/**", "/login").permitAll()
                         .anyRequest().authenticated()
                 )
+                .logout(logOut->logOut.logoutSuccessUrl("http://rookie-tuwer.client.com:8900"))
                 // 指定登录页面,
                 .formLogin(formLogin ->
                         formLogin.loginPage("/login")
@@ -303,8 +304,8 @@ public class OAuth2AuthorizationServerSecurityConfiguration {
                  * 不在此列的地址将被拒统；
                  * 只能使用IP或域名，不能使用localhost
                  */
-                .redirectUri("http://rookie-tuwer.client.com:8000/login/oauth2/code/myClient")
-                .redirectUri("http://rookie-tuwer.client.com:8000")
+                .redirectUri("http://rookie-tuwer.client.com:8900/login/oauth2/code/myClient")
+                .redirectUri("http://rookie-tuwer.client.com:8900")
                 .redirectUri("https://www.baidu.com")
                 // 授权范围（当前客户端的授权范围）
                 .scope("read")

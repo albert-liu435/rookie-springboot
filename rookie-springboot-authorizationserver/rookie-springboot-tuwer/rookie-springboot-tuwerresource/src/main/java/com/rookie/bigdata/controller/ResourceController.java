@@ -24,4 +24,9 @@ public class ResourceController {
     public String getRes2() {
         return JSON.toJSONString(new Result(200, "服务A -> 资源2"));
     }
+
+    @GetMapping("/res3")
+    public String getRes3() {
+        return JSON.toJSONString(new Result(200, "服务A -> 资源3"));
+    }
 }

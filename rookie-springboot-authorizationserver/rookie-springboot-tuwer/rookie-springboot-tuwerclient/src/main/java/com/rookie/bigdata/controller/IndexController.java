@@ -17,7 +17,7 @@ import java.util.*;
 
 /**
  * @Class IndexController
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2024/8/13 18:26
  * @Version 1.0
@@ -58,7 +58,7 @@ public class IndexController {
         // ========== 清理认证中心 ===========
         // 跳转至认证中心退出页面
         try {
-            response.sendRedirect("http://os.com:9000/logout");
+            response.sendRedirect("http://rookie-tuwer.server.com:9000/logout");
         } catch (IOException e) {
             e.printStackTrace();
         }
