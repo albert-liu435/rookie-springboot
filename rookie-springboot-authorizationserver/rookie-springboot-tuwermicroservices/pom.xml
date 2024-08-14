@@ -18,12 +18,13 @@
     <url>http://www.example.com</url>
 
     <modules>
-<!--        <module>rookie-springboot-tuwerclient</module>-->
-<!--        <module>rookie-springboot-tuwerresource</module>-->
+        <module>rookie-springboot-tuwerclientmicro</module>
+        <module>rookie-springboot-tuwermicroresource01</module>
 
-<!--        <module>rookie-springboot-tuwerresource2</module>-->
-<!--        <module>rookie-springboot-tuwerserver</module>-->
+        <module>rookie-springboot-tuwermicroresource02</module>
+        <module>rookie-springboot-tuwerservermicro</module>
         <module>rookie-springboot-tuwereureka</module>
+        <module>rookie-springboot-tuwergateway</module>
     </modules>
 
     <properties>
@@ -51,6 +52,12 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client -->
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.cloud</groupId>-->
+<!--                <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
+<!--                <version>4.1.3</version>-->
+<!--            </dependency>-->
 
             <!-- Spring Security OAuth2 依赖 -->
             <!-- 授权服务器 Spring Authorization Server-->

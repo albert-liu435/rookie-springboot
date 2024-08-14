@@ -1,0 +1,96 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    # 网关应用名称
+    name: gatewey-9999
+  # 配置 Spring Cloud 相关属性
+  cloud:
+    # 配置 Spring Cloud Gateway 相关属性
+    gateway:
+      # 配置网关发现机制
+      discovery:
+        # 配置处理机制
+        locator:
+          # ----------------
+          # 只要请求地址符合规则：http://网关地址:端口/微服务名称/微服务请求地址，就自动映射
+          # 把请求转发到：http://微服务提供者地址:端口/微服务名称/微服务请求地址
+          # ----------------
+          # 开启网关自动映射处理机制
+          # 商业开发中，一般不设置为 true，使用默认值 false；避免不必要的自动转发规则
+          enabled: false
+          # 开启服务名称小写转换（默认为false）
+          lower-case-service-id: true
+
+      routes:
+        # 资源服务A
+        # 把对 【网关/o2_resource_a/**】 的请求，转发到 【lb://oauth2-resource-a-8001】
+        # 转发时去掉第1节 o2_resource_a
+        # lb: 表示负载均衡 loadbalance
+        # oauth2-resource-a-8001 是【资源服务A】在注册中心中的名称
+        - id: oauth2-resource-a-8001
+          uri: lb://oauth2-resource-a-8001
+          predicates:
+            - Path=/o2_resource_a/**
+            - Method=GET
+          filters:
+            - name: StripPrefix
+              args:
+                # 过滤掉第1节
+                parts: 1
+        # 资源服务B
+        - id: oauth2-resource-b-8002
+          uri: lb://oauth2-resource-b-8002
+          predicates:
+            - Path=/o2_resource_b/**
+            - Method=GET
+          filters:
+            - name: StripPrefix
+              args:
+                # 过滤掉第1节
+                parts: 1
+        # 客户端
+        - id: oauth2-client-8000
+          uri: http://127.0.0.1:8000
+          predicates:
+            - Path=/o2_client/**
+            - Method=GET
+          filters:
+            - name: StripPrefix
+              args:
+                # 过滤掉第1节
+                parts: 1
+        # 认证中心
+        - id: oauth2-server-9000
+          uri: http://os.com:9000
+          predicates:
+            - Path=/o2_server/**
+            - Method=GET,POST
+          filters:
+            - name: StripPrefix
+              args:
+                # 过滤掉第1节
+                parts: 1
+# 配置 Eureka
+eureka:
+  client:
+    # 默认值：true 需要从注册中心拉取其他的服务
+    #fetch-registry: true
+    service-url:
+      # 注册中心地址
+      defaultZone: http://localhost:7000/eureka/
+
+  instance:
+    # 修改Eureka上的默认描述信息
+    instance-id: gatewey-9999
+    # 以IP地址注册到服务中心
+    prefer-ip-address: true
+
+# 监控端口配置
+management:
+  endpoints:
+    web:
+      exposure:
+        # 开启 info,health；新版本中只默认开启了 health
+        include: info,health
