@@ -5,6 +5,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.oauth2.server.resource.InvalidBearerTokenException;
@@ -21,6 +22,7 @@ import java.util.HashMap;
  * @Date 2024/8/13 18:00
  * @Version 1.0
  */
+@Slf4j
 public class SimpleAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
 
@@ -29,7 +31,8 @@ public class SimpleAuthenticationEntryPoint implements AuthenticationEntryPoint 
         HashMap<String, String> map = new HashMap<>(2);
         if (authException instanceof InvalidBearerTokenException) {
             // 令牌失效
-            System.out.println("token失效");
+//            System.out.println("token失效");
+            log.info("token失效");
             //todo token处理逻辑
         }
         map.put("uri", request.getRequestURI());

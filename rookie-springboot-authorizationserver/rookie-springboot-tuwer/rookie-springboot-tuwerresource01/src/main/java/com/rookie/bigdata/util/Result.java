@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 /**
  * @Class Result
- * @Description
+ * @Description 结果对象
  * @Author rookie
  * @Date 2024/8/13 15:15
  * @Version 1.0

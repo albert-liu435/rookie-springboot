@@ -38,29 +38,23 @@ public class OAuth2ResourceServerConfiguration {
 
         http
                 .sessionManagement(session -> {
+//                    资源服务不涉及用户登录，仅靠token访问，不需要seesion；security的session生成策略改为security不主动创建session即STALELESS
                     session.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
                 })
-                // security的session生成策略改为security不主动创建session即STALELESS
-//                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//                .and()
-                // 对 /res1 的请求，需要 SCOPE_read 权限
-//                .authorizeRequests()
-//                .antMatchers("/res1").hasAnyAuthority("SCOPE_read", "SCOPE_all")
-//                .antMatchers("/res2").hasAnyAuthority("SCOPE_write1", "SCOPE_all")
-//                // 其余请求都需要认证
-//                .anyRequest().authenticated()
-                .authorizeRequests(request->{
+                .authorizeRequests(request -> {
+                    //资源权限说明：
+                    //
+                    //访问资源 res1，需要有 read 或 all
+                    //访问资源 res2，需要有 write1 或 all
+
+                    //对 /res1 的请求，需要 SCOPE_read 权限
+
                     request.requestMatchers("/res1").hasAnyAuthority("SCOPE_read", "SCOPE_all")
                             .requestMatchers("/res2").hasAnyAuthority("SCOPE_write1", "SCOPE_all")
+                            // 其余请求都需要认证
                             .anyRequest().authenticated();
-                })
-//                .antMatchers("/res1").hasAnyAuthority("SCOPE_read", "SCOPE_all")
-//                .antMatchers("/res2").hasAnyAuthority("SCOPE_write1", "SCOPE_all")
-//                // 其余请求都需要认证
-//                .anyRequest().authenticated()
-        ;
+                });
         http
-//                .and()
                 // 异常处理
                 .exceptionHandling(exceptionConfigurer -> exceptionConfigurer
 
@@ -79,50 +73,6 @@ public class OAuth2ResourceServerConfiguration {
         return
                 http.build();
     }
-
-
-//    /**
-//     * 资源管理器配置
-//     *
-//     * @param http the http
-//     * @return the security filter chain
-//     * @throws Exception the exception
-//     */
-//    @Bean
-//    SecurityFilterChain jwtSecurityFilterChain(HttpSecurity http) throws Exception {
-//        // 拒绝访问处理器 401
-//        SimpleAccessDeniedHandler accessDeniedHandler = new SimpleAccessDeniedHandler();
-//        // 认证失败处理器 403
-//        SimpleAuthenticationEntryPoint authenticationEntryPoint = new SimpleAuthenticationEntryPoint();
-//
-//        return http
-//
-//                // security的session生成策略改为security不主动创建session即STALELESS
-//                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//                .and()
-//                // 对 /res1 的请求，需要 SCOPE_read 权限
-//                .authorizeRequests()
-//                .antMatchers("/res1").hasAnyAuthority("SCOPE_read","SCOPE_all")
-//                .antMatchers("/res2").hasAnyAuthority("SCOPE_write1","SCOPE_all")
-//                // 其余请求都需要认证
-//                .anyRequest().authenticated()
-//                .and()
-//                // 异常处理
-//                .exceptionHandling(exceptionConfigurer -> exceptionConfigurer
-//                        // 拒绝访问
-//                        .accessDeniedHandler(accessDeniedHandler)
-//                        // 认证失败
-//                        .authenticationEntryPoint(authenticationEntryPoint)
-//                )
-//                // 资源服务
-//                .oauth2ResourceServer(resourceServer -> resourceServer
-//                        .accessDeniedHandler(accessDeniedHandler)
-//                        .authenticationEntryPoint(authenticationEntryPoint)
-//                        .jwt()
-//                )
-//                .build();
-//    }
-
 
     /**
      * JWT个性化解析

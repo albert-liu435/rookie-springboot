@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @Class ResourceController
- * @Description
+ * @Description 资源请求接口对象
  * @Author rookie
  * @Date 2024/8/13 15:14
  * @Version 1.0

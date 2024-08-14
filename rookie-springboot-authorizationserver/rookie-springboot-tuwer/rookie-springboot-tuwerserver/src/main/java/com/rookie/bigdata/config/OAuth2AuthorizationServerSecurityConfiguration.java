@@ -110,8 +110,9 @@ public class OAuth2AuthorizationServerSecurityConfiguration {
                         )
                 )
 //                .logout(Customizer.withDefaults())
-                .logout(logOut->{
-                    AntPathRequestMatcher antPathRequestMatcher=new AntPathRequestMatcher("/logout","GET");
+                .logout(logOut -> {
+                    //定义登出
+                    AntPathRequestMatcher antPathRequestMatcher = new AntPathRequestMatcher("/logout", "GET");
 
                     logOut.logoutRequestMatcher(antPathRequestMatcher);
                 })
@@ -138,8 +139,8 @@ public class OAuth2AuthorizationServerSecurityConfiguration {
                         .anyRequest().authenticated()
                 )
 //                .logout(logOut->logOut.logoutSuccessUrl("http://rookie-tuwer.client.com:8900"))
-                .logout(logOut->{
-                    AntPathRequestMatcher antPathRequestMatcher=new AntPathRequestMatcher("/logout","GET");
+                .logout(logOut -> {
+                    AntPathRequestMatcher antPathRequestMatcher = new AntPathRequestMatcher("/logout", "GET");
 
                     logOut.logoutRequestMatcher(antPathRequestMatcher);
                 })
@@ -167,75 +168,6 @@ public class OAuth2AuthorizationServerSecurityConfiguration {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-//    /**
-//     * 配置客户端Repository
-//     *
-//     * @param jdbcTemplate    db 数据源信息
-//     * @param passwordEncoder 密码解析器
-//     * @return 基于数据库的repository
-//     */
-//    @Bean
-//    public RegisteredClientRepository registeredClientRepository(JdbcTemplate jdbcTemplate, PasswordEncoder passwordEncoder) {
-//        RegisteredClient registeredClient = RegisteredClient.withId(UUID.randomUUID().toString())
-//                // 客户端id
-//                .clientId("messaging-client")
-//                // 客户端秘钥，使用密码解析器加密
-//                .clientSecret(passwordEncoder.encode("123456"))
-//                // 客户端认证方式，基于请求头的认证
-//                .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
-//                // 配置资源服务器使用该客户端获取授权时支持的方式
-//                .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
-//                //refresh_token的方式
-//                .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
-//                //客户端的方式
-//                .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
-//                // 授权码模式回调地址，oauth2.1已改为精准匹配，不能只设置域名，并且屏蔽了localhost，本机使用127.0.0.1访问
-//                .redirectUri("http://127.0.0.1:8080/login/oauth2/code/messaging-client-oidc")
-//                .redirectUri("https://www.baidu.com")
-//                // 该客户端的授权范围，OPENID与PROFILE是IdToken的scope，获取授权时请求OPENID的scope时认证服务会返回IdToken
-//                .scope(OidcScopes.OPENID)
-//                .scope(OidcScopes.PROFILE)
-//                // 自定scope
-//                .scope("message.read")
-//                .scope("message.write")
-//                // 客户端设置，设置用户需要确认授权
-//                .clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
-//                //有效期设置为12年，如果不设置的话，默认为当前时间，则马上回过期不能使用
-//                .clientSecretExpiresAt(Instant.now().plus(12 * 365, ChronoUnit.DAYS))
-////                //设置2天有效期
-//                .tokenSettings(TokenSettings.builder().authorizationCodeTimeToLive(Duration.ofDays(2)).accessTokenTimeToLive(Duration.ofDays(2)).build())
-//                .build();
-//
-//        // 基于db存储客户端，还有一个基于内存的实现 InMemoryRegisteredClientRepository
-//        JdbcRegisteredClientRepository registeredClientRepository = new JdbcRegisteredClientRepository(jdbcTemplate);
-//
-//        // 初始化客户端
-//        RegisteredClient repositoryByClientId = registeredClientRepository.findByClientId(registeredClient.getClientId());
-//        if (repositoryByClientId == null) {
-//            registeredClientRepository.save(registeredClient);
-//        }
-//        // 设备码授权客户端
-//        RegisteredClient deviceClient = RegisteredClient.withId(UUID.randomUUID().toString())
-//                .clientId("device-message-client")
-//                // 公共客户端
-//                .clientAuthenticationMethod(ClientAuthenticationMethod.NONE)
-//                // 设备码授权
-//                .authorizationGrantType(AuthorizationGrantType.DEVICE_CODE)
-//                .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
-//                // 自定scope
-//                .scope("message.read")
-//                .scope("message.write")
-//                //有效期设置为12年，如果不设置的话，默认为当前时间，则马上回过期不能使用
-//                .clientSecretExpiresAt(Instant.now().plus(12 * 365, ChronoUnit.DAYS))
-//                .build();
-//        RegisteredClient byClientId = registeredClientRepository.findByClientId(deviceClient.getClientId());
-//        if (byClientId == null) {
-//            registeredClientRepository.save(deviceClient);
-//        }
-//        return registeredClientRepository;
-//    }
-//
 
     @Bean
     public RegisteredClientRepository registeredClientRepository(JdbcTemplate jdbcTemplate, PasswordEncoder passwordEncoder) {
@@ -301,7 +233,6 @@ public class OAuth2AuthorizationServerSecurityConfiguration {
                 //.withId(id)
                 .clientId(clientId)
                 //.clientSecret("{noop}123456")
-//                .clientSecret(PasswordEncoderFactories.createDelegatingPasswordEncoder().encode("123456"))
                 .clientSecret(passwordEncoder.encode("123456"))
                 // 客户端名称：可省略
                 .clientName("my_client_name")
@@ -362,7 +293,6 @@ public class OAuth2AuthorizationServerSecurityConfiguration {
                 //.withId(id)
                 .clientId("micro_service")
                 //.clientSecret("{noop}123456")
-                //                .clientSecret(PasswordEncoderFactories.createDelegatingPasswordEncoder().encode("123456"))
                 .clientSecret(passwordEncoder.encode("123456"))
                 // 客户端名称：可省略
                 .clientName("micro_service")
@@ -421,25 +351,6 @@ public class OAuth2AuthorizationServerSecurityConfiguration {
         return new JdbcOAuth2AuthorizationConsentService(jdbcTemplate, registeredClientRepository);
     }
 
-//    /**
-//     * 配置jwk源，使用非对称加密，公开用于检索匹配指定选择器的JWK的方法
-//     *
-//     * @return JWKSource
-//     */
-//    @Bean
-//    public JWKSource<SecurityContext> jwkSource() {
-//        KeyPair keyPair = generateRsaKey();
-//        RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();
-//        RSAPrivateKey privateKey = (RSAPrivateKey) keyPair.getPrivate();
-//        RSAKey rsaKey = new RSAKey.Builder(publicKey)
-//                .privateKey(privateKey)
-//                .keyID(UUID.randomUUID().toString())
-//                .build();
-//        JWKSet jwkSet = new JWKSet(rsaKey);
-//        return new ImmutableJWKSet<>(jwkSet);
-//    }
-
-
     /**
      * 加载jwk资源
      * 用于生成令牌
@@ -465,35 +376,6 @@ public class OAuth2AuthorizationServerSecurityConfiguration {
         JWKSet jwkSet = new JWKSet(rsaKey);
         return (jwkSelector, securityContext) -> jwkSelector.select(jwkSet);
     }
-
-
-    /**
-     * 生成rsa密钥对，提供给jwk
-     *
-     * @return 密钥对
-     */
-    private static KeyPair generateRsaKey() {
-        KeyPair keyPair;
-        try {
-            KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
-            keyPairGenerator.initialize(2048);
-            keyPair = keyPairGenerator.generateKeyPair();
-        } catch (Exception ex) {
-            throw new IllegalStateException(ex);
-        }
-        return keyPair;
-    }
-
-//    /**
-//     * 配置jwt解析器
-//     *
-//     * @param jwkSource jwk源
-//     * @return JwtDecoder
-//     */
-//    @Bean
-//    public JwtDecoder jwtDecoder(JWKSource<SecurityContext> jwkSource) {
-//        return OAuth2AuthorizationServerConfiguration.jwtDecoder(jwkSource);
-//    }
 
 
     /**

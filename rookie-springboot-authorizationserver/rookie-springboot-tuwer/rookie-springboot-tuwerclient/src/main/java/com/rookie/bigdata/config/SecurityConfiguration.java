@@ -17,8 +17,10 @@ import org.springframework.web.client.RestTemplate;
  */
 @Configuration(proxyBeanMethods = false)
 public class SecurityConfiguration {
-    /***
+
+    /**
      * 安全配置
+     *
      * @param http http
      * @return SecurityFilterChain
      * @throws Exception exception

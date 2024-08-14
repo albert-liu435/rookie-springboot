@@ -37,7 +37,7 @@ public class JwtDecoderConfiguration {
     private JwtProperties jwtProperties;
 
     /**
-     *  校验jwt发行者 issuer 是否合法
+     * 校验jwt发行者 issuer 是否合法
      *
      * @return the jwt issuer validator
      */
@@ -60,8 +60,9 @@ public class JwtDecoderConfiguration {
 
     /**
      * jwt token 委托校验器，集中校验的策略{@link OAuth2TokenValidator}
-     *
+     * <p>
      * // @Primary：自动装配时当出现多个Bean候选者时，被注解为@Primary的Bean将作为首选者，否则将抛出异常
+     *
      * @param tokenValidators the token validators
      * @return the delegating o auth 2 token validator
      */
@@ -73,8 +74,9 @@ public class JwtDecoderConfiguration {
 
     /**
      * 基于Nimbus的jwt解码器，并增加了一些自定义校验策略
-     *
+     * <p>
      * // @Qualifier 当有多个相同类型的bean存在时，指定注入
+     *
      * @param validator DelegatingOAuth2TokenValidator<Jwt> 委托token校验器
      * @return the jwt decoder
      */

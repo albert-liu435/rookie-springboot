@@ -4,6 +4,7 @@ import com.alibaba.fastjson2.JSON;
 import com.rookie.bigdata.util.Result;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestClientException;
@@ -28,6 +31,7 @@ import java.util.Map;
  * @Version 1.0
  */
 @RestController
+@Slf4j
 public class ResourceController {
     @Autowired
     RestTemplate restTemplate;
@@ -61,7 +65,7 @@ public class ResourceController {
         if (StringUtils.isEmpty(token)) {
             // ===== 去认证中心申请 =====
             // 对id及密钥加密
-            byte[] userpass = Base64.encodeBase64(("micro_service:123456").getBytes(),false);
+            byte[] userpass = Base64.encodeBase64(("micro_service:123456").getBytes(), false);
             String str = "";
             try {
                 str = new String(userpass, "UTF-8");
@@ -69,20 +73,40 @@ public class ResourceController {
                 e.printStackTrace();
             }
 
+//            // 对id及密钥加密
+//            byte[] userpass = Base64.encodeBase64(("micro_service:123456").getBytes(), false);
+//            String str = "";
+//            try {
+//                str = new String(userpass, "UTF-8");
+//            } catch (UnsupportedEncodingException e) {
+//                e.printStackTrace();
+//            }
+
             // 请求头
             HttpHeaders headers1 = new HttpHeaders();
             // 组装请求头
             headers1.add("Authorization", "Basic " + str);
-            // 请求体
-            HttpEntity<Object> httpEntity1 = new HttpEntity<>(headers1);
+
+            MultiValueMap<String, String> formData = new LinkedMultiValueMap<>();
+//        formData.add("key1", "value1");
+//        formData.add("key2", "value2");
+            formData.add("grant_type", "client_credentials");
+
+            formData.add("scope", "all");
+
+            HttpEntity<MultiValueMap<String, String>> httpEntity1 = new HttpEntity<>(formData, headers1);
+
+
+
             // 响应体
             ResponseEntity<String> responseEntity1 = null;
             try {
+
                 // 发起申请令牌请求
-                responseEntity1 = restTemplate.exchange("http://os.com:9000/oauth2/token?grant_type=client_credentials", HttpMethod.POST, httpEntity1, String.class);
+            responseEntity1 = restTemplate.postForEntity("http://rookie-tuwer.server.com:9000/oauth2/token", httpEntity1, String.class);
             } catch (RestClientException e) {
-                //
-                System.out.println("令牌申请失败");
+
+                log.error("令牌申请失败");
             }
 
             // 令牌申请成功
@@ -95,6 +119,7 @@ public class ResourceController {
                 session.setAttribute("micro-token", t);
                 // 赋于token变量
                 token = t;
+                log.info("令牌申请成功");
             }
         }
 
@@ -116,9 +141,9 @@ public class ResourceController {
             // 401 : "{"msg":"认证失败","uri":"/res2"}"
             String str = e.getMessage();
             // 判断是否含有 401
-            if(StringUtils.contains(str, "401")){
+            if (StringUtils.contains(str, "401")) {
                 // 如果有401，把session中 micro-token 的值设为空
-                session.setAttribute("micro-token","");
+                session.setAttribute("micro-token", "");
             }
             // 取两个括号中间的部分（包含两个括号）
             return str.substring(str.indexOf("{"), str.indexOf("}") + 1);

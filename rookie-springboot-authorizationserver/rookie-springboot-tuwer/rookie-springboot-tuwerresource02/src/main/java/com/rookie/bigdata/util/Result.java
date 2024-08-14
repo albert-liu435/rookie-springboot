@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 /**
  * @Class Result
- * @Description
+ * @Description 结果对象
  * @Author rookie
  * @Date 2024/8/13 15:15
  * @Version 1.0
@@ -29,7 +29,7 @@ public class Result {
      */
     private LocalDateTime time;
 
-    public Result(Integer code,Object data){
+    public Result(Integer code, Object data) {
         this.code = code;
         this.data = data;
         this.time = LocalDateTime.now();
