@@ -20,6 +20,7 @@
 
 
 3、进行客户端访问：http://rookie-tuwer.client.com:8900
+测试资源服务之间的调用
 
 
 参考文章：https://blog.csdn.net/tu_wer/category_11828716.html
