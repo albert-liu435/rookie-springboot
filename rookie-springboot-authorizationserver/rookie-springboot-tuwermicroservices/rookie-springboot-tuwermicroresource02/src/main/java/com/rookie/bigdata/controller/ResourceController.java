@@ -4,6 +4,8 @@ import com.alibaba.fastjson2.JSON;
 import com.rookie.bigdata.util.Result;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,14 +29,23 @@ import java.util.Map;
  * @Date 2024/8/13 15:14
  * @Version 1.0
  */
+@Slf4j
 @RestController
 public class ResourceController {
     @Autowired
+    //@Qualifier("restTemplate")
     RestTemplate restTemplate;
+    //@Autowired
+    //@Qualifier("basicAuthRestTemplate")
+    //RestTemplate bastAuthRestTemplate;
+
+    private String BASE_URL = "http://rookie-tuwer.gateway.com:9999";
 
     @GetMapping("/res1")
     public String getRes1(HttpServletRequest request) {
-        return getServer("http://127.0.0.1:8001/res2", request);
+        log.info("进入资源B/res1方法");
+        //return getServer("http://127.0.0.1:8001/res2", request);
+        return getServer(BASE_URL + "/o2_resource_a/res2", request);
         //return JSON.toJSONString(new Result(200, "服务B -> 资源1"));
     }
 
@@ -61,7 +72,7 @@ public class ResourceController {
         if (StringUtils.isEmpty(token)) {
             // ===== 去认证中心申请 =====
             // 对id及密钥加密
-            byte[] userpass = Base64.encodeBase64(("micro_service:123456").getBytes(),false);
+            byte[] userpass = Base64.encodeBase64(("micro_service_2:123456").getBytes(),false);
             String str = "";
             try {
                 str = new String(userpass, "UTF-8");
@@ -79,18 +90,20 @@ public class ResourceController {
             ResponseEntity<String> responseEntity1 = null;
             try {
                 // 发起申请令牌请求
-                responseEntity1 = restTemplate.exchange("http://os.com:9000/oauth2/token?grant_type=client_credentials", HttpMethod.POST, httpEntity1, String.class);
+                //responseEntity1 = restTemplate.exchange(BASE_URL + "http://os.com:9000/oauth2/token?grant_type=client_credentials", HttpMethod.POST, httpEntity1, String.class);
+                responseEntity1 = restTemplate.exchange(BASE_URL + "/o2_server/oauth2/token?grant_type=client_credentials", HttpMethod.POST, httpEntity1, String.class);
             } catch (RestClientException e) {
                 //
                 System.out.println("令牌申请失败");
             }
+            //String forObject = bastAuthRestTemplate.getForObject(BASE_URL + "/o2_server/oauth2/token?grant_type=client_credentials", String.class);
 
             // 令牌申请成功
             if (responseEntity1 != null) {
+                //if (StringUtils.isNotEmpty(forObject)) {
                 // 解析令牌
-                //String t = JSON.parseObject(responseEntity1.getBody(), MyAuth.class).getAccess_token();
-                Map<String, String> resMap = JSON.parseObject(responseEntity1.getBody(), HashMap.class);
-                String t = resMap.get("access_token");
+                String t = JSON.parseObject(responseEntity1.getBody(), MyAuth.class).getAccess_token();
+                //String t = JSON.parseObject(forObject, MyAuth.class).getAccess_token();
                 // 存入session
                 session.setAttribute("micro-token", t);
                 // 赋于token变量
@@ -128,10 +141,10 @@ public class ResourceController {
     }
 }
 
-/*@Data
+@Data
 class MyAuth {
     private String access_token;
     private String scope;
     private String token_type;
     private long expires_in;
-}*/
+}

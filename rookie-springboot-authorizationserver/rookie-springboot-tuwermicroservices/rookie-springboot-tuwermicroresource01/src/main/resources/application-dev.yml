@@ -1,6 +1,10 @@
 server:
   port: 8001
 
+spring:
+  application:
+    # 应用名称
+    name: oauth2-resource-a-8001
 
 # 自定义 jwt 配置（校验jwt）
 jwt:

@@ -1,5 +1,5 @@
 server:
-  port: 8900
+  port: 8000
 
 spring:
   application:
@@ -11,7 +11,7 @@ spring:
         registration:
           # 客户端：与注册时保持一致
           myClient:
-            client-id: my_client
+            client-id: my_client_2
             client-secret: 123456
             #client-name: my_client_name
             scope: read,write
