@@ -14,7 +14,7 @@
 
     <modules>
         <module>rookie-springboot-tuwer</module>
-        <module>rookie-springboot-tuwergateway</module>
+        <module>rookie-springboot-tuwermicroservices</module>
     </modules>
 
 

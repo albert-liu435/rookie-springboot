@@ -19,9 +19,9 @@
 
     <modules>
         <module>rookie-springboot-tuwerclient</module>
-        <module>rookie-springboot-tuwerresource</module>
+        <module>rookie-springboot-tuwerresource01</module>
 
-        <module>rookie-springboot-tuwerresource2</module>
+        <module>rookie-springboot-tuwerresource02</module>
         <module>rookie-springboot-tuwerserver</module>
     </modules>
 

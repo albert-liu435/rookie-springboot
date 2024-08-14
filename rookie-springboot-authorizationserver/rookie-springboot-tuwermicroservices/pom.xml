@@ -11,9 +11,9 @@
     <packaging>pom</packaging>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>rookie-springboot-tuwergateway</artifactId>
+    <artifactId>rookie-springboot-tuwermicroservices</artifactId>
 
-    <name>rookie-springboot-tuwergateway</name>
+    <name>rookie-springboot-tuwermicroservices</name>
     <!--  change it to the project's website -->
     <url>http://www.example.com</url>
 
