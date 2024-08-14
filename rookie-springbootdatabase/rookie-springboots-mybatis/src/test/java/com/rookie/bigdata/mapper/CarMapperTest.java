@@ -26,7 +26,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 
 @SpringBootTest
-//@ActiveProfiles("test")
+@ActiveProfiles("dev")
 class CarMapperTest {
 
     public static final Logger logger = LoggerFactory.getLogger(CarMapperTest.class);

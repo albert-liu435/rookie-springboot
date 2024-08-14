@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="10 seconds">
 
-    <!-- <include resource="org/springframework/boot/logging/logback/base.xml"/>-->
+   <!-- <include resource="org/springframework/boot/logging/logback/base.xml"/>-->
 
-    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
     <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}spring.log}"/>
-    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
-    <include resource="org/springframework/boot/logging/logback/file-appender.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+    <include resource="org/springframework/boot/logging/logback/file-appender.xml" />
 
 
     <!--/data/ucenter/bestseller_service/logs-->
@@ -70,10 +70,10 @@
         <!-- 正在记录的日志文件的路径及文件名 -->
         <file>${log.path}/log_debug.log</file>
         <!--日志文件输出格式-->
-        <!--        <encoder>-->
-        <!--            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>-->
-        <!--            <charset>UTF-8</charset> &lt;!&ndash; 设置字符集 &ndash;&gt;-->
-        <!--        </encoder>-->
+<!--        <encoder>-->
+<!--            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>-->
+<!--            <charset>UTF-8</charset> &lt;!&ndash; 设置字符集 &ndash;&gt;-->
+<!--        </encoder>-->
 
         <encoder>
             <Pattern>${log.pattern}</Pattern>
@@ -104,10 +104,10 @@
         <!-- 正在记录的日志文件的路径及文件名 -->
         <file>${log.path}/log_info.log</file>
         <!--日志文件输出格式-->
-        <!--        <encoder>-->
-        <!--            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>-->
-        <!--            <charset>UTF-8</charset>-->
-        <!--        </encoder>-->
+<!--        <encoder>-->
+<!--            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>-->
+<!--            <charset>UTF-8</charset>-->
+<!--        </encoder>-->
 
         <encoder>
             <Pattern>${log.pattern}</Pattern>
@@ -137,10 +137,10 @@
         <!-- 正在记录的日志文件的路径及文件名 -->
         <file>${log.path}/log_warn.log</file>
         <!--日志文件输出格式-->
-        <!--        <encoder>-->
-        <!--            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>-->
-        <!--            <charset>UTF-8</charset> &lt;!&ndash; 此处设置字符集 &ndash;&gt;-->
-        <!--        </encoder>-->
+<!--        <encoder>-->
+<!--            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>-->
+<!--            <charset>UTF-8</charset> &lt;!&ndash; 此处设置字符集 &ndash;&gt;-->
+<!--        </encoder>-->
 
         <encoder>
             <Pattern>${log.pattern}</Pattern>
@@ -171,10 +171,10 @@
         <!-- 正在记录的日志文件的路径及文件名 -->
         <file>${log.path}/log_error.log</file>
         <!--日志文件输出格式-->
-        <!--        <encoder>-->
-        <!--            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>-->
-        <!--            <charset>UTF-8</charset> &lt;!&ndash; 此处设置字符集 &ndash;&gt;-->
-        <!--        </encoder>-->
+<!--        <encoder>-->
+<!--            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>-->
+<!--            <charset>UTF-8</charset> &lt;!&ndash; 此处设置字符集 &ndash;&gt;-->
+<!--        </encoder>-->
 
         <encoder>
             <Pattern>${log.pattern}</Pattern>
@@ -199,41 +199,19 @@
     </appender>
 
 
-
-    <logger name="org.springframework.web" level="ERROR"/>
-    <logger name="com.bestseller.crm" level="DEBUG"/>
-    <logger name="org.apache.ibatis" level="DEBUG"/>
-    <logger name="org.mybatis" level="DEBUG"/>
-
-    <root level="DEBUG">
-        <appender-ref ref="CONSOLE"/>
-        <appender-ref ref="DEBUG_FILE"/>
-        <appender-ref ref="INFO_FILE"/>
-        <appender-ref ref="WARN_FILE"/>
-        <appender-ref ref="ERROR_FILE"/>
-    </root>
+        <root level="DEBUG">
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="DEBUG_FILE"/>
+            <appender-ref ref="INFO_FILE"/>
+            <appender-ref ref="WARN_FILE"/>
+            <appender-ref ref="ERROR_FILE"/>
+        </root>
 
     <!-- 开发、测试环境 -->
     <springProfile name="dev,uat">
         <logger name="org.springframework.web" level="DEBUG"/>
         <logger name="com.rookie.bigdata" level="DEBUG"/>
-        <!--        <logger name="com.baomidou.mybatisplus" level="DEBUG"/>-->
-        <!--  <logger name="com.bestseller.miniapp.pintuan.mapper" level="DEBUUG"/>-->
-        <!--        <logger name="org.redisson" level="INFO"/>-->
-        <!--        <root level="DEBUG">-->
-        <!--            &lt;!&ndash;<appender-ref ref="CONSOLE"/>&ndash;&gt;-->
-        <!--            <appender-ref ref="DEBUG_FILE"/>-->
-        <!--            <appender-ref ref="INFO_FILE"/>-->
-        <!--            <appender-ref ref="WARN_FILE"/>-->
-        <!--            <appender-ref ref="ERROR_FILE"/>-->
-        <!--        </root>-->
-        <!--        <root level="info">-->
-        <!--            <appender-ref ref="CONSOLE"/>-->
-        <!--            <appender-ref ref="DEBUG_FILE"/>-->
-        <!--            <appender-ref ref="INFO_FILE"/>-->
-        <!--            <appender-ref ref="ERROR_FILE"/>-->
-        <!--            <appender-ref ref="WARN_FILE"/>-->
-        <!--        </root>-->
+
         <root level="DEBUG">
             <appender-ref ref="CONSOLE"/>
             <appender-ref ref="DEBUG_FILE"/>
@@ -246,15 +224,7 @@
     <!-- 生产环境 -->
     <springProfile name="prod">
         <logger name="org.springframework.web" level="ERROR"/>
-        <logger name="com.bestseller.callcenter" level="DEBUG"/>
-        <!--        <logger name="com.baomidou.mybatisplus" level="DEBUG"/>-->
-        <!--        <root level="info">-->
-        <!--            <appender-ref ref="CONSOLE"/>-->
-        <!--            <appender-ref ref="DEBUG_FILE"/>-->
-        <!--            <appender-ref ref="INFO_FILE"/>-->
-        <!--            <appender-ref ref="ERROR_FILE"/>-->
-        <!--            <appender-ref ref="WARN_FILE"/>-->
-        <!--        </root>-->
+        <logger name="com.rookie.bigdata" level="DEBUG"/>
         <root level="INFO">
             <appender-ref ref="CONSOLE"/>
             <appender-ref ref="DEBUG_FILE"/>

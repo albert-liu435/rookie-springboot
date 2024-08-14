@@ -10,10 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-<!--        <module>rookie-springboot-es</module>-->
+        <!--        <module>rookie-springboot-es</module>-->
 <!--        <module>rookie-springboot-mybatis</module>-->
-<!--        <module>rookie-springboot-mybatis-interceptor</module>-->
-<!--        <module>rookie-springboots-mybatis</module>-->
+        <!--        <module>rookie-springboot-mybatis-interceptor</module>-->
+        <module>rookie-springboots-mybatis</module>
     </modules>
 
     <artifactId>rookie-springbootdatabase</artifactId>
