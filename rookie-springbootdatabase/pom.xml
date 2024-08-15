@@ -11,8 +11,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>rookie-distributedlock-mybatis</module>
+        <module>rookie-distributedlock-redis</module>
         <!--        <module>rookie-springboot-es</module>-->
-<!--        <module>rookie-springboot-mybatis</module>-->
+        <!--        <module>rookie-springboot-mybatis</module>-->
         <!--        <module>rookie-springboot-mybatis-interceptor</module>-->
         <module>rookie-springboots-mybatis</module>
     </modules>
