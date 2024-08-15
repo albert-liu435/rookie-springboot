@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rookie.bigdata.mapper.DistributedLockMapper">
+
+    <select id="getDistributedLock" resultType="com.rookie.bigdata.pojo.DistributedLock">
+        SELECT
+        T.lock_name as lockName
+        FROM
+        xxl_job_lock T
+        <where>
+            <if test="lockName != null">
+                AND T.lock_name = #{lockName}
+            </if>
+        </where>
+
+        for update
+    </select>
+
+    <insert id="insert">
+        insert into xxl_job_lock(lock_name)
+        values (#{lockName})
+    </insert>
+
+</mapper>
