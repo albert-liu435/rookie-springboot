@@ -24,6 +24,7 @@
         <module>rookie-springboot-routerfunction</module>
         <module>rookie-springboot-kaptcha</module>
         <module>rookie-springboot-filter</module>
+        <module>rookie-springboot-globalexception</module>
         <!--        <module>rookie-springboot-schedule</module>-->
         <module>rookie-springboot-event</module>
     </modules>
