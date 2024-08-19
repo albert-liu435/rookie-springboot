@@ -12,6 +12,8 @@
     <modules>
         <module>rookie-distributedlock-mybatis</module>
         <module>rookie-distributedlock-redis</module>
+
+        <module>rookie-limiter-guava</module>
         <!--        <module>rookie-springboot-es</module>-->
         <!--        <module>rookie-springboot-mybatis</module>-->
         <!--        <module>rookie-springboot-mybatis-interceptor</module>-->
