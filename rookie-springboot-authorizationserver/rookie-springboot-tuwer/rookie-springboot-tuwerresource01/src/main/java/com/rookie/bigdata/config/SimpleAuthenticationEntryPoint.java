@@ -33,7 +33,7 @@ public class SimpleAuthenticationEntryPoint implements AuthenticationEntryPoint 
             // 令牌失效
 //            System.out.println("token失效");
             log.info("token失效");
-            //todo token处理逻辑
+            // token处理逻辑
         }
         map.put("uri", request.getRequestURI());
         map.put("msg", "认证失败");

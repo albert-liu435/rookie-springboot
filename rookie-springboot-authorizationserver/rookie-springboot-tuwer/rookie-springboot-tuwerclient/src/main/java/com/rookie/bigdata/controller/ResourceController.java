@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * @Class ResourceController
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2024/8/13 18:26
  * @Version 1.0
