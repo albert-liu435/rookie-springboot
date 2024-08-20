@@ -13,7 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>rookie-springboot-redisson</module>
-        <module>rookie-springboot-redis</module>
         <module>rookie-springboot-distributedlock-redisson</module>
     </modules>
 
