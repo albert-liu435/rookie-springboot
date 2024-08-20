@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>rookie-limiter-guava</artifactId>
+    <artifactId>rookie-limiter-redis</artifactId>
 
-    <name>rookie-limiter-guava</name>
+    <name>rookie-limiter-redis</name>
     <!--  change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -40,12 +40,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.alibaba.csp/sentinel-core -->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-core</artifactId>
-            <version>1.8.8</version>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -57,25 +51,6 @@
             <artifactId>guava</artifactId>
 <!--            <version>27.0.1-jre</version>-->
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.alibaba.fastjson2/fastjson2 -->
-        <dependency>
-            <groupId>com.alibaba.fastjson2</groupId>
-            <artifactId>fastjson2</artifactId>
-            <!--      <version>2.0.52</version>-->
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.alibaba.fastjson2/fastjson2-extension -->
-        <dependency>
-            <groupId>com.alibaba.fastjson2</groupId>
-            <artifactId>fastjson2-extension</artifactId>
-            <!--      <version>2.0.52</version>-->
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.alibaba.fastjson2/fastjson2-extension-spring6 -->
-        <dependency>
-            <groupId>com.alibaba.fastjson2</groupId>
-            <artifactId>fastjson2-extension-spring6</artifactId>
-            <!--      <version>2.0.52</version>-->
-        </dependency>
-
     </dependencies>
     <build>
         <plugins>
