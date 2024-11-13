@@ -1,2 +1,0 @@
-#com.rookie.bigdata.service.HelloService=com.rookie.bigdata.service.impl.HelloServiceImpl
-org.springframework.beans.BeanInfoFactory=com.rookie.bigdata.service.impl.HelloServiceImpl

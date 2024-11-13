@@ -19,7 +19,7 @@
 
         <!--        <module>rookie-springbootredis</module>-->
         <module>rookie-springbootdatabase</module>
-        <!--                <module>rookies-spring</module>-->
+
     </modules>
 
     <properties>
