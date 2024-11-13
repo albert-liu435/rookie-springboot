@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <modules>
-        <module>rookie-springboot-annotation</module>
+
         <module>rookie-springboot-authorizationserver</module>
         <!--        <module>rookie-springboot-retry</module>-->
         <module>rookie-springboot-springdoc</module>
