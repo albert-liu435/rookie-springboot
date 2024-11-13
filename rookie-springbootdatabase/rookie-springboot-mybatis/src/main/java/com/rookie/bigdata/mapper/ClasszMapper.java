@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @Date 2024/1/19 17:08
  * @Version 1.0
  */
-@Mapper
+//@Mapper
 public interface ClasszMapper {
     /**
      * 分步查询第二步：根据cid获取班级信息

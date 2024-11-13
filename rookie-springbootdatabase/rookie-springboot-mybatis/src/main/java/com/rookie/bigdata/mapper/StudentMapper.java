@@ -14,7 +14,7 @@ import java.util.Map;
  * @Date 2024/1/17 16:47
  * @Version 1.0
  */
-@Mapper
+//@Mapper
 public interface StudentMapper {
 
 //    常用的储存时间/日期的类型：

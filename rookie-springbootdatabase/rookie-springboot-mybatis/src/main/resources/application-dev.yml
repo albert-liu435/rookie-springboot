@@ -31,9 +31,10 @@ spring:
 mybatis:
   #  config-location: classpath:mybatis-config.xml
   mapper-locations: classpath*:/mapper/**/*.xml
+
   ##目的是为了省略resultType里的代码量
   #type-aliases-package: com.rookie.bigdata.pojo
   #configuration:
-#  log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  #  log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 server:
   port: 8081

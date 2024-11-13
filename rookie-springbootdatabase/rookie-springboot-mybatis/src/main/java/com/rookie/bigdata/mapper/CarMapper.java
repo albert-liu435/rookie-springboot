@@ -15,7 +15,7 @@ import java.util.Map;
  * @Date 2024/1/16 18:05
  * @Version 1.0
  */
-@Mapper//让容器加载这个Bean
+//@Mapper//让容器加载这个Bean
 public interface CarMapper {
 
 

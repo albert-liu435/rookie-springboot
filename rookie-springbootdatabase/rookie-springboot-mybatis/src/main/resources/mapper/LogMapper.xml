@@ -3,11 +3,11 @@
 <mapper namespace="com.rookie.bigdata.mapper.LogMapper">
 
 
-    <select id="selectAllByTable" resultType="Log">
-        select
-            id,log,time
-        from
-            t_log_${date}
-    </select>
+<!--    <select id="selectAllByTable" resultType="Log">-->
+<!--        select-->
+<!--            id,log,time-->
+<!--        from-->
+<!--            t_log_${date}-->
+<!--    </select>-->
 
 </mapper>

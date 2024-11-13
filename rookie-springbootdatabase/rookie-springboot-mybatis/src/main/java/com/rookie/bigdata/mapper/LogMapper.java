@@ -22,5 +22,5 @@ public interface LogMapper {
      * @param date
      * @return
      */
-    List<Log> selectAllByTable(String date);
+//    List<Log> selectAllByTable(String date);
 }

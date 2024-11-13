@@ -1,7 +1,6 @@
 package com.rookie.bigdata.mapper;
 
 import com.rookie.bigdata.pojo.Car;
-import org.apache.ibatis.annotations.Param;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,11 +10,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
-
 import java.util.List;
 import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @Class CarMapperTest
