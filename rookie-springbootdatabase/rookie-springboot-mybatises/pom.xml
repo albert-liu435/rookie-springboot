@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>rookie-springboot-mybatis</artifactId>
+    <artifactId>rookie-springboot-mybatises</artifactId>
 
-    <name>rookie-springboot-mybatis</name>
+    <name>rookie-springboot-mybatises</name>
     <!--  change it to the project's website -->
     <url>http://www.example.com</url>
 
