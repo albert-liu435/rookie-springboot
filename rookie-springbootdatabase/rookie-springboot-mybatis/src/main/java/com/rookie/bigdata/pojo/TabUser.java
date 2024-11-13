@@ -1,9 +1,6 @@
 package com.rookie.bigdata.pojo;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
@@ -19,6 +16,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Accessors(chain = true)
+@NoArgsConstructor
 @AllArgsConstructor
 @ToString
 public class TabUser implements Serializable {

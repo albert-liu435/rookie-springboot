@@ -26,32 +26,41 @@ public interface TabUserMapper {
      * @return 更新条目数
      */
     int insert(TabUser tabUser);
-//
-//    /**
-//     * 动态插入一条记录
-//     *
-//     * @param record 实体对象
-//     * @return 更新条目数
-//     */
-//    int insertSelective(TabUser record);
-//
-//
-//    /**
-//     * 批量插入
-//     *
-//     * @param list 插入集合
-//     * @return 插入数量
-//     */
-//    int insertForeach(List<TabUser> list);
-//
-//
-//    /**
-//     * 根据主键动态更新记录
-//     *
-//     * @param record 实体对象
-//     * @return 更新条目数
-//     */
-//    int updateByPrimaryKeySelective(TabUser record);
+
+    /**
+     * 动态插入一条记录
+     *
+     * @param tabUser 实体对象
+     * @return 更新条目数
+     */
+    int insertSelective(TabUser tabUser);
+
+
+    /**
+     * 批量插入
+     *
+     * @param list 插入集合
+     * @return 插入数量
+     */
+    int insertForeach(List<TabUser> list);
+
+
+    /**
+     * 删除 tabUser
+     *
+     * @param tabUser
+     * @return
+     */
+    int deleteTabUser(TabUser tabUser);
+
+
+    /**
+     * 根据主键动态更新记录
+     *
+     * @param tabUser 实体对象
+     * @return 更新条目数
+     */
+    int updateByPrimaryKeySelective(TabUser tabUser);
 
 
     /**
@@ -60,7 +69,7 @@ public interface TabUserMapper {
      * @param id 主键
      * @return 实体对象
      */
-    TabUser selectByPrimaryKey( Long id);
+    TabUser selectByPrimaryKey(Long id);
 
 
     /**
