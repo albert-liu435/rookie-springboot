@@ -10,8 +10,7 @@
     <version>1.0.0</version>
     <modules>
 
-        <module>rookie-springboot-authorizationserver</module>
-        <!--        <module>rookie-springboot-retry</module>-->
+
         <module>rookie-springboot-springdoc</module>
         <module>rookie-springbootweb</module>
         <module>rookie-springbootwebflux</module>
@@ -28,7 +27,8 @@
         <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <spring.boot.version>3.3.2</spring.boot.version>
+    <!--    <spring.boot.version>3.3.2</spring.boot.version>-->
+        <spring.boot.version>3.3.4</spring.boot.version>
 
         <hutool.version>5.8.24</hutool.version>
         <fast2.version>2.0.52</fast2.version>

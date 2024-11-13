@@ -10,11 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>rookie-distributedlock-mybatis</module>
-        <module>rookie-distributedlock-redis</module>
+<!--        <module>rookie-distributedlock-mybatis</module>-->
+<!--        <module>rookie-distributedlock-redis</module>-->
 
-        <module>rookie-limiter-guava</module>
-        <module>rookie-limiter-redis</module>
+<!--        <module>rookie-limiter-guava</module>-->
+<!--        <module>rookie-limiter-redis</module>-->
         <!--        <module>rookie-springboot-es</module>-->
         <!--        <module>rookie-springboot-mybatis</module>-->
         <!--        <module>rookie-springboot-mybatis-interceptor</module>-->

@@ -12,9 +12,10 @@
     <artifactId>rookie-springbootjson</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>rookie-springboot-fastjson</module>
+<!--        <module>rookie-springboot-fastjson</module>-->
+<!--        <module>rookie-springboot-gson</module>-->
 <!--        <module>rookie-springboot-jackson</module>-->
-        <module>rookie-springboot-gson</module>
+
 
     </modules>
 

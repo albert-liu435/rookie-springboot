@@ -10,23 +10,23 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>rookie-springboot-fileupload</module>
-        <module>rookie-springboot-aop</module>
-        <module>rookie-springboot-async</module>
-        <module>rookie-springboot-cors</module>
-        <module>rookie-springboot-desensitization</module>
-        <module>rookie-springboot-junit4</module>
-        <module>rookie-springboot-junit5</module>
+<!--        <module>rookie-springboot-fileupload</module>-->
+<!--        <module>rookie-springboot-aop</module>-->
+<!--        <module>rookie-springboot-async</module>-->
+<!--        <module>rookie-springboot-cors</module>-->
+<!--        <module>rookie-springboot-desensitization</module>-->
+<!--        <module>rookie-springboot-junit4</module>-->
+<!--        <module>rookie-springboot-junit5</module>-->
         <!--        <module>rookie-springboot-Swagger</module>-->
         <!--        <module>rookie-springboot-mybatisplus</module>-->
-        <module>rookie-springboot-parameter</module>
-        <module>rookie-springboot-redirect</module>
-        <module>rookie-springboot-routerfunction</module>
-        <module>rookie-springboot-kaptcha</module>
-        <module>rookie-springboot-filter</module>
-        <module>rookie-springboot-globalexception</module>
+<!--        <module>rookie-springboot-parameter</module>-->
+<!--        <module>rookie-springboot-redirect</module>-->
+<!--        <module>rookie-springboot-routerfunction</module>-->
+<!--        <module>rookie-springboot-kaptcha</module>-->
+<!--        <module>rookie-springboot-filter</module>-->
+<!--        <module>rookie-springboot-globalexception</module>-->
         <!--        <module>rookie-springboot-schedule</module>-->
-        <module>rookie-springboot-event</module>
+<!--        <module>rookie-springboot-event</module>-->
     </modules>
     <artifactId>rookie-springbootweb</artifactId>
 
