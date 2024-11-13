@@ -46,6 +46,22 @@ class TabUserMapperTest {
     }
 
     @Test
+    void interceptorInsert(){
+        TabUser tabUser=new TabUser();
+        tabUser.setAge(23);
+//        tabUser.setId(100L);
+        tabUser.setName("aaa");
+        tabUser.setCreateTime(new Date());
+        tabUser.setUpdateTime(new Date());
+        tabUser.setStatus(0);
+        int insert = tabUserMapper.insert(tabUser);
+        log.info("insert的数据量：{}",insert);
+
+    }
+
+
+
+    @Test
     void insertSelective(){
         TabUser tabUser=new TabUser();
         tabUser.setAge(23);

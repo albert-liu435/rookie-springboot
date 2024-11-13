@@ -1,5 +1,6 @@
 package com.rookie.bigdata.pojo;
 
+import com.rookie.bigdata.common.enums.AutoId;
 import lombok.*;
 import lombok.experimental.Accessors;
 
@@ -25,7 +26,7 @@ public class TabUser implements Serializable {
     /**
      * id(添加自定义主键ID)
      */
-//    @AutoId
+    @AutoId
     private Long id;
 
     /**
