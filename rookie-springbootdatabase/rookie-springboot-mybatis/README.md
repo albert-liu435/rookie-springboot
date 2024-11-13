@@ -23,7 +23,10 @@ DataScopeInterceptor
 DataPermissionInterceptor
 
 
-
+数据脱敏：
+https://www.cnblogs.com/qdhxhz/p/16352087.html
+主要涉及到的类:DesensitizationInterceptor,MybatisInterceptorConfig
+测试类：com.rookie.bigdata.mapper.DUserMapperTest.findAllUser
 
 
 

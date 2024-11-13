@@ -21,7 +21,7 @@
         <!--        <module>rookie-limiter-redis</module>-->
         <!--        <module>rookie-springboot-es</module>-->
         <!--        <module>rookie-springboot-mybatis</module>-->
-        <module>rookie-springboots-mybatis</module>
+<!--        <module>rookie-springboots-mybatis</module>-->
 
     </modules>
 
