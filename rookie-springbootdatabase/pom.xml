@@ -12,6 +12,7 @@
     <modules>
 
         <module>rookie-springboot-mybatis</module>
+        <module>rookie-springboot-mybatisplus</module>
 
 
         <!--        <module>rookie-distributedlock-mybatis</module>-->
