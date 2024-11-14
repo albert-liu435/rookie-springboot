@@ -29,6 +29,11 @@ https://www.cnblogs.com/qdhxhz/p/16352087.html
 测试类：com.rookie.bigdata.mapper.DUserMapperTest.findAllUser
 
 
+mysql分布式锁
+https://github.com/mybatis/spring-boot-starter
+DistributedLockController
+
+
 
 
 

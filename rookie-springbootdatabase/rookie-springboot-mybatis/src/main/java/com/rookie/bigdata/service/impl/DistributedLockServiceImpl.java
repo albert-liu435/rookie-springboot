@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @Class DistributedLockService
+ * @Class DistributedLockServiceImpl
  * @Description
  * @Author rookie
- * @Date 2024/8/15 10:50
+ * @Date 2024/11/14 17:44
  * @Version 1.0
  */
 @Service
