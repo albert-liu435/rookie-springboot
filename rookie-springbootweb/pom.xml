@@ -12,6 +12,7 @@
     <modules>
 
         <module>rookie-springboot-junit4</module>
+        <module>rookie-springboot-junit5</module>
         <module>rookie-springboot-web</module>
 
         <!--        <module>rookie-springboot-fileupload</module>-->
