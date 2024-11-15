@@ -1,4 +1,4 @@
-package com.rookie.bigdata.controller;
+package com.rookie.bigdata.controller.async;
 
 import jakarta.servlet.AsyncContext;
 import jakarta.servlet.AsyncEvent;
@@ -13,13 +13,13 @@ import java.io.IOException;
 
 /**
  * @Class AsyncController
- * @Description https://spring.hhui.top/spring-blog/2020/03/29/200329-SpringBoot%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%E4%B9%8B%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%E6%9C%80%E5%85%A8%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%8E%E4%BD%BF%E7%94%A8%E5%A7%BF%E5%8A%BF/
+ * @Description
  * @Author rookie
- * @Date 2024/7/8 15:42
+ * @Date 2024/11/15 17:41
  * @Version 1.0
  */
 @RestController
-@RequestMapping(path = "servlet")
+@RequestMapping(path = "/async/servlet")
 @Slf4j
 public class AsyncController {
 
@@ -31,7 +31,7 @@ public class AsyncController {
 //异步任务asyncContext.start(Runnable)
 
     /**
-     * http://localhost:8080/servlet/get?sleep=100
+     * http://localhost:8080/async/servlet/get?sleep=100
      *
      * @param request
      */

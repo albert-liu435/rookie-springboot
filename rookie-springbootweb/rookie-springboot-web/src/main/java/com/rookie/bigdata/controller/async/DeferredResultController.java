@@ -1,4 +1,4 @@
-package com.rookie.bigdata.controller;
+package com.rookie.bigdata.controller.async;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
