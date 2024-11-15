@@ -15,7 +15,7 @@ import java.util.Map;
 
 /**
  * @ClassName LogAspect
- * @Description http://www.macrozheng.com/#/technology/aop_log
+ * @Description http://www.macrozheng.com/#/technology/aop_log   比如可以通过AOP可以将日志信息保存到数据库中
  * @Author rookie
  * @Date 2021/6/17 16:20
  * @Version 1.0
@@ -23,6 +23,8 @@ import java.util.Map;
 @Aspect
 @Component
 public class LogAspect {
+
+
 
 
     //@Pointcut("execution(* com.rookie.bigdata.controller..*.*(..)) || @annotation(com.rookie.bigdata.annotation.Log)")
